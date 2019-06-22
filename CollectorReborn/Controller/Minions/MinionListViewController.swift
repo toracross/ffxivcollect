@@ -1,5 +1,5 @@
 //
-//  TestViewController.swift
+//  MinionListViewController.swift
 //  CollectorReborn
 //
 //  Created by Wellison Pereira on 6/21/19.
@@ -8,56 +8,56 @@
 
 import UIKit
 
-class MountListViewController: UIViewController {
+class MinionListViewController: UIViewController {
     
     // Outlets
     @IBOutlet weak var tableView: UITableView!
     
     // Variables
-    private var mounts: [Mount] = []
+    private var minions: [Minions] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        testAPI()
+        
+        setupUI()
+        getMinions()
     }
+    
+    // Storyboard Actions
     
     // Functions
     private func setupUI() {
-        
+        navigationItem.title = "Minions"
     }
     
-    private func testAPI() {
-        FFXIVCollectService.shared.requestData(for: .mounts) { [weak self] (mounts) in
-            guard let strongSelf = self, let mounts = mounts else { return }
-            strongSelf.mounts = mounts
+    private func getMinions() {
+        FFXIVCollectService.shared.requestData(for: .minions) { [weak self] (minions: Minion?) in
+            guard let strongSelf = self, let minions = minions?.minions else { return }
+            strongSelf.minions = minions
             
             DispatchQueue.main.async {
                 strongSelf.tableView.reloadData()
             }
         }
     }
-    
-    
+
 }
 
-extension MountListViewController: UITableViewDelegate {
+extension MinionListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(mounts[indexPath.row])
-//        let viewController = MountDetailsViewController(mount: mounts[indexPath.row])
-//        present(viewController, animated: true, completion: nil)
+        print(minions[indexPath.row])
     }
 }
 
-
-extension MountListViewController: UITableViewDataSource {
+extension MinionListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return mounts.count
+        return minions.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        cell.textLabel?.text = mounts[indexPath.row].name
+        cell.textLabel?.text = minions[indexPath.row].name
+        cell.imageView?.setImageFromURL(string: minions[indexPath.row].icon)
         return cell
     }
 }

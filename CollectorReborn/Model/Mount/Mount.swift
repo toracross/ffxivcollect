@@ -8,15 +8,21 @@
 
 import Foundation
 
-struct MountResults: Decodable {
-    let results: [Mount]?
+struct Mount: Decodable {
     
-    init(results: [Mount]?) {
-        self.results = results
+    let mounts: [Mounts]?
+    
+    enum CodingKeys: String, CodingKey {
+        case mounts = "results"
     }
+    
+    init(mounts: [Mounts]?) {
+        self.mounts = mounts
+    }
+    
 }
 
-struct Mount: Decodable {
+struct Mounts: Decodable {
     
     let id: Int?
     let name: String?
@@ -69,6 +75,29 @@ struct Mount: Decodable {
         self.image = image
         self.icon = icon
         self.sources = sources
+    }
+    
+}
+
+struct MountSource: Decodable {
+    
+    let type: String?
+    let text: String?
+    let relatedType: String?
+    let relatedId: Int?
+    
+    enum CodingKeys: String, CodingKey {
+        case type = "type"
+        case text = "text"
+        case relatedType = "related_type"
+        case relatedId = "related_id"
+    }
+    
+    init(type: String?, text: String?, relatedType: String?, relatedId: Int?) {
+        self.type = type
+        self.text = text
+        self.relatedType = relatedType
+        self.relatedId = relatedId
     }
     
 }

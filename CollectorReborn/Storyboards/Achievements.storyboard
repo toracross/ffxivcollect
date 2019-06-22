@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gq6-Yc-Jw4">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Achievements View Controller-->
+        <scene sceneID="0va-hN-sCD">
+            <objects>
+                <viewController storyboardIdentifier="AchievementsViewController" id="NTm-3l-Lab" customClass="AchievementsViewController" customModule="CollectorReborn" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xpY-dr-0VY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qvZ-ZZ-fbd">
+                                <rect key="frame" x="0.0" y="140" width="414" height="722"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="NTm-3l-Lab" id="VPU-7l-ESZ"/>
+                                    <outlet property="delegate" destination="NTm-3l-Lab" id="xPe-Yr-Tvh"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="nFU-VD-3Qr" firstAttribute="trailing" secondItem="qvZ-ZZ-fbd" secondAttribute="trailing" id="2Wh-HU-MXS"/>
+                            <constraint firstItem="qvZ-ZZ-fbd" firstAttribute="leading" secondItem="nFU-VD-3Qr" secondAttribute="leading" id="buf-8a-Z7t"/>
+                            <constraint firstItem="nFU-VD-3Qr" firstAttribute="bottom" secondItem="qvZ-ZZ-fbd" secondAttribute="bottom" id="dxt-pk-dhh"/>
+                            <constraint firstItem="qvZ-ZZ-fbd" firstAttribute="top" secondItem="nFU-VD-3Qr" secondAttribute="top" id="wrK-sh-aEl"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="nFU-VD-3Qr"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="nkQ-iQ-eDs"/>
+                    <connections>
+                        <outlet property="tableView" destination="qvZ-ZZ-fbd" id="zX0-8b-35i"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zqy-ld-9zK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-987" y="-475"/>
+        </scene>
+        <!--Achievements-->
+        <scene sceneID="6e3-Op-rWL">
+            <objects>
+                <navigationController storyboardIdentifier="AchievementNavigationController" title="Achievements" automaticallyAdjustsScrollViewInsets="NO" id="gq6-Yc-Jw4" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item 1" id="eRs-Tq-ga6"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="L8Y-A0-bfj">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="NTm-3l-Lab" kind="relationship" relationship="rootViewController" id="cYJ-7e-dUI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="250-ML-Kxt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1899" y="-476"/>
+        </scene>
+    </scenes>
+</document>
