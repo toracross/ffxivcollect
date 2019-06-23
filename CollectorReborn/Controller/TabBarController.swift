@@ -13,25 +13,29 @@ class TabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupTabBar()
+        setupViewControllers()
     }
     
-    private func setupTabBar() {
+    private func setupViewControllers() {
         let achievementStoryboard = UIStoryboard(name: "Achievements", bundle: Bundle.main)
         let achievementViewController = achievementStoryboard.instantiateViewController(withIdentifier: "AchievementNavigationController")
-        achievementViewController.tabBarItem = UITabBarItem(title: "Achievements", image: UIImage(named: "achievements"), selectedImage: UIImage(named: "achievements"))
+        let achievementImage = UIImage(named: "achievements\([0, 1, 2].randomElement() ?? 0)")?.withRenderingMode(.alwaysOriginal)
+        achievementViewController.tabBarItem = UITabBarItem(title: "Achievements", image: achievementImage, selectedImage: achievementImage)
         
         let mountStoryboard = UIStoryboard(name: "Mounts", bundle: Bundle.main)
         let mountViewController = mountStoryboard.instantiateViewController(withIdentifier: "MountListNavigationController")
-        mountViewController.tabBarItem = UITabBarItem(title: "Mounts", image: UIImage(named: "mountguide"), selectedImage: UIImage(named: "mountguide"))
+        let mountImage = UIImage(named: "mountguide\([0, 1, 2].randomElement() ?? 0)")?.withRenderingMode(.alwaysOriginal)
+        mountViewController.tabBarItem = UITabBarItem(title: "Mounts", image: mountImage, selectedImage: mountImage)
         
         let minionStoryboard = UIStoryboard(name: "Minions", bundle: Bundle.main)
         let minionViewController = minionStoryboard.instantiateViewController(withIdentifier: "MinionListNavigationController")
-        minionViewController.tabBarItem = UITabBarItem(title: "Minions", image: UIImage(named: "minionguide"), selectedImage: UIImage(named: "minionguide"))
+        let minionImage = UIImage(named: "minionguide\([0, 1, 2].randomElement() ?? 0)")?.withRenderingMode(.alwaysOriginal)
+        minionViewController.tabBarItem = UITabBarItem(title: "Minions", image: minionImage, selectedImage: minionImage)
         
         let ttStoryboard = UIStoryboard(name: "TripleTriad", bundle: Bundle.main)
         let ttViewController = ttStoryboard.instantiateViewController(withIdentifier: "TTCardsViewController")
-        ttViewController.tabBarItem = UITabBarItem(title: "Triple Triad", image: UIImage(named: "ttcard"), selectedImage: UIImage(named: "ttcard"))
+        let cardImage = UIImage(named: "ttcard\([0, 1, 2].randomElement() ?? 0)")?.withRenderingMode(.alwaysOriginal)
+        ttViewController.tabBarItem = UITabBarItem(title: "Triple Triad", image: cardImage, selectedImage: cardImage)
         
         viewControllers = [achievementViewController, mountViewController, minionViewController, ttViewController]
     }

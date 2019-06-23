@@ -32,11 +32,11 @@ struct Achievements: Decodable {
     let patch: String?
     let owned: String?
     let icon: String?
-    let category: AchievementCategory?
-    let type: AchievementType?
+    let category: AchievementCategory
+    let type: AchievementType
     let reward: AchievementReward?
     
-    init(id: Int?, name: String?, description: String?, points: Int?, order: Int?, patch: String?, owned: String?, icon: String?, category: AchievementCategory?, type: AchievementType?, reward: AchievementReward?) {
+    init(id: Int?, name: String?, description: String?, points: Int?, order: Int?, patch: String?, owned: String?, icon: String?, category: AchievementCategory, type: AchievementType, reward: AchievementReward?) {
         self.id = id
         self.name = name
         self.description = description
@@ -53,13 +53,13 @@ struct Achievements: Decodable {
 }
 
 struct AchievementCategory: Decodable {
-    let id: Int?
-    let name: String?
+    let id: Int
+    let name: String
 }
 
-struct AchievementType: Decodable {
-    let id: Int?
-    let name: String?
+struct AchievementType: Decodable, Hashable {
+    let id: Int
+    let name: String
 }
 
 struct AchievementReward: Decodable {

@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9509E33E22BFE0C1000C9F50 /* UITabBar+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9509E33D22BFE0C1000C9F50 /* UITabBar+Extensions.swift */; };
+		9509E34022BFE97C000C9F50 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9509E33F22BFE97C000C9F50 /* UIView+Extensions.swift */; };
+		9509E34222BFEE4E000C9F50 /* AchievementCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9509E34122BFEE4E000C9F50 /* AchievementCategoryCell.swift */; };
+		9509E34422C00B8E000C9F50 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9509E34322C00B8E000C9F50 /* Array+Extensions.swift */; };
+		9509E34622C02110000C9F50 /* AchievementPointsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9509E34522C02110000C9F50 /* AchievementPointsCell.xib */; };
+		9509E34822C0215C000C9F50 /* AchievementCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9509E34722C0215C000C9F50 /* AchievementCategoryCell.xib */; };
+		9509E34B22C03096000C9F50 /* AchievementsCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9509E34922C0226B000C9F50 /* AchievementsCategoryViewController.swift */; };
 		95E24F8E22BD2DE600CFA533 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E24F8D22BD2DE600CFA533 /* AppDelegate.swift */; };
 		95E24F9522BD2DE700CFA533 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95E24F9422BD2DE700CFA533 /* Assets.xcassets */; };
 		95E24F9822BD2DE700CFA533 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95E24F9622BD2DE700CFA533 /* LaunchScreen.storyboard */; };
@@ -15,7 +22,6 @@
 		95E24FAA22BD2F2100CFA533 /* FFXIVCollectService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E24FA922BD2F2100CFA533 /* FFXIVCollectService.swift */; };
 		95E24FAD22BD2FFC00CFA533 /* Mount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E24FAC22BD2FFC00CFA533 /* Mount.swift */; };
 		95E24FB322BD380B00CFA533 /* MountDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E24FB222BD380B00CFA533 /* MountDetailsViewController.swift */; };
-		95E24FB922BD67F000CFA533 /* AchievementsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E24FB822BD67F000CFA533 /* AchievementsViewController.swift */; };
 		95E24FBC22BD6A3100CFA533 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E24FBB22BD6A3100CFA533 /* UIImageView+Extensions.swift */; };
 		95E24FC122BD6F8700CFA533 /* Achievements.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95E24FC022BD6F8700CFA533 /* Achievements.storyboard */; };
 		95E24FC322BD6F9600CFA533 /* Mounts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95E24FC222BD6F9600CFA533 /* Mounts.storyboard */; };
@@ -31,9 +37,23 @@
 		95E24FDC22BF29C100CFA533 /* TTCardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E24FDB22BF29C100CFA533 /* TTCardsViewController.swift */; };
 		95E24FE022BF2C1600CFA533 /* TTCardsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E24FDF22BF2C1600CFA533 /* TTCardsDetailViewController.swift */; };
 		95E24FE222BF2E5700CFA533 /* MinionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E24FE122BF2E5700CFA533 /* MinionDetailViewController.swift */; };
+		95E24FE422BFA94500CFA533 /* AchievementsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E24FE322BFA94500CFA533 /* AchievementsViewController.swift */; };
+		95E24FE722BFAA1F00CFA533 /* AchievementPointsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E24FE622BFAA1F00CFA533 /* AchievementPointsCell.swift */; };
+		95E24FEA22BFB61F00CFA533 /* meiryo.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 95E24FE922BFB61E00CFA533 /* meiryo.ttc */; };
+		95E24FEE22BFBEDE00CFA533 /* JupiterCondensedSCOsF.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 95E24FEB22BFBBE100CFA533 /* JupiterCondensedSCOsF.ttf */; };
+		95E24FF622BFD25300CFA533 /* TableHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95E24FF522BFD25300CFA533 /* TableHeaderCell.xib */; };
+		95E24FF822BFD2D000CFA533 /* TableHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E24FF722BFD2D000CFA533 /* TableHeaderCell.swift */; };
+		95E24FFF22BFD45500CFA533 /* FFXIVTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E24FFE22BFD45500CFA533 /* FFXIVTheme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9509E33D22BFE0C1000C9F50 /* UITabBar+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITabBar+Extensions.swift"; sourceTree = "<group>"; };
+		9509E33F22BFE97C000C9F50 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		9509E34122BFEE4E000C9F50 /* AchievementCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementCategoryCell.swift; sourceTree = "<group>"; };
+		9509E34322C00B8E000C9F50 /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
+		9509E34522C02110000C9F50 /* AchievementPointsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AchievementPointsCell.xib; sourceTree = "<group>"; };
+		9509E34722C0215C000C9F50 /* AchievementCategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AchievementCategoryCell.xib; sourceTree = "<group>"; };
+		9509E34922C0226B000C9F50 /* AchievementsCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsCategoryViewController.swift; sourceTree = "<group>"; };
 		95E24F8A22BD2DE600CFA533 /* CollectorReborn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollectorReborn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95E24F8D22BD2DE600CFA533 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95E24F9422BD2DE700CFA533 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -44,7 +64,6 @@
 		95E24FA922BD2F2100CFA533 /* FFXIVCollectService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFXIVCollectService.swift; sourceTree = "<group>"; };
 		95E24FAC22BD2FFC00CFA533 /* Mount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mount.swift; sourceTree = "<group>"; };
 		95E24FB222BD380B00CFA533 /* MountDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountDetailsViewController.swift; sourceTree = "<group>"; };
-		95E24FB822BD67F000CFA533 /* AchievementsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsViewController.swift; sourceTree = "<group>"; };
 		95E24FBB22BD6A3100CFA533 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
 		95E24FC022BD6F8700CFA533 /* Achievements.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Achievements.storyboard; sourceTree = "<group>"; };
 		95E24FC222BD6F9600CFA533 /* Mounts.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Mounts.storyboard; sourceTree = "<group>"; };
@@ -60,6 +79,13 @@
 		95E24FDB22BF29C100CFA533 /* TTCardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTCardsViewController.swift; sourceTree = "<group>"; };
 		95E24FDF22BF2C1600CFA533 /* TTCardsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTCardsDetailViewController.swift; sourceTree = "<group>"; };
 		95E24FE122BF2E5700CFA533 /* MinionDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinionDetailViewController.swift; sourceTree = "<group>"; };
+		95E24FE322BFA94500CFA533 /* AchievementsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsViewController.swift; sourceTree = "<group>"; };
+		95E24FE622BFAA1F00CFA533 /* AchievementPointsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementPointsCell.swift; sourceTree = "<group>"; };
+		95E24FE922BFB61E00CFA533 /* meiryo.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = meiryo.ttc; sourceTree = "<group>"; };
+		95E24FEB22BFBBE100CFA533 /* JupiterCondensedSCOsF.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = JupiterCondensedSCOsF.ttf; sourceTree = "<group>"; };
+		95E24FF522BFD25300CFA533 /* TableHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableHeaderCell.xib; sourceTree = "<group>"; };
+		95E24FF722BFD2D000CFA533 /* TableHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableHeaderCell.swift; sourceTree = "<group>"; };
+		95E24FFE22BFD45500CFA533 /* FFXIVTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFXIVTheme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +118,7 @@
 		95E24F8C22BD2DE600CFA533 /* CollectorReborn */ = {
 			isa = PBXGroup;
 			children = (
+				95E24FE822BFB61500CFA533 /* Resources */,
 				95E24FBA22BD6A2700CFA533 /* Extensions */,
 				95E24FA122BD2E4600CFA533 /* Model */,
 				95E24FA022BD2E4300CFA533 /* View */,
@@ -120,7 +147,9 @@
 		95E24FA022BD2E4300CFA533 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				95E24FD022BEC1A700CFA533 /* CollectionViewCell.swift */,
+				95E24FF422BFD24100CFA533 /* UICollectionView */,
+				95E24FF322BFD23C00CFA533 /* UITableView */,
+				95E24FE522BFAA1300CFA533 /* Achievements */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -168,7 +197,8 @@
 		95E24FB422BD5B9700CFA533 /* Achievements */ = {
 			isa = PBXGroup;
 			children = (
-				95E24FB822BD67F000CFA533 /* AchievementsViewController.swift */,
+				95E24FE322BFA94500CFA533 /* AchievementsViewController.swift */,
+				9509E34922C0226B000C9F50 /* AchievementsCategoryViewController.swift */,
 			);
 			path = Achievements;
 			sourceTree = "<group>";
@@ -195,6 +225,9 @@
 			isa = PBXGroup;
 			children = (
 				95E24FBB22BD6A3100CFA533 /* UIImageView+Extensions.swift */,
+				9509E33D22BFE0C1000C9F50 /* UITabBar+Extensions.swift */,
+				9509E33F22BFE97C000C9F50 /* UIView+Extensions.swift */,
+				9509E34322C00B8E000C9F50 /* Array+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -231,6 +264,60 @@
 				95E24FDF22BF2C1600CFA533 /* TTCardsDetailViewController.swift */,
 			);
 			path = TripleTriad;
+			sourceTree = "<group>";
+		};
+		95E24FE522BFAA1300CFA533 /* Achievements */ = {
+			isa = PBXGroup;
+			children = (
+				9509E34522C02110000C9F50 /* AchievementPointsCell.xib */,
+				95E24FE622BFAA1F00CFA533 /* AchievementPointsCell.swift */,
+				9509E34722C0215C000C9F50 /* AchievementCategoryCell.xib */,
+				9509E34122BFEE4E000C9F50 /* AchievementCategoryCell.swift */,
+			);
+			path = Achievements;
+			sourceTree = "<group>";
+		};
+		95E24FE822BFB61500CFA533 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				95E24FFD22BFD44900CFA533 /* Color */,
+				95E24FFC22BFD43200CFA533 /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		95E24FF322BFD23C00CFA533 /* UITableView */ = {
+			isa = PBXGroup;
+			children = (
+				95E24FF522BFD25300CFA533 /* TableHeaderCell.xib */,
+				95E24FF722BFD2D000CFA533 /* TableHeaderCell.swift */,
+			);
+			path = UITableView;
+			sourceTree = "<group>";
+		};
+		95E24FF422BFD24100CFA533 /* UICollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				95E24FD022BEC1A700CFA533 /* CollectionViewCell.swift */,
+			);
+			path = UICollectionView;
+			sourceTree = "<group>";
+		};
+		95E24FFC22BFD43200CFA533 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				95E24FEB22BFBBE100CFA533 /* JupiterCondensedSCOsF.ttf */,
+				95E24FE922BFB61E00CFA533 /* meiryo.ttc */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		95E24FFD22BFD44900CFA533 /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				95E24FFE22BFD45500CFA533 /* FFXIVTheme.swift */,
+			);
+			path = Color;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,13 +378,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9509E34622C02110000C9F50 /* AchievementPointsCell.xib in Resources */,
+				95E24FEA22BFB61F00CFA533 /* meiryo.ttc in Resources */,
 				95E24FA522BD2E9B00CFA533 /* Main.storyboard in Resources */,
 				95E24F9822BD2DE700CFA533 /* LaunchScreen.storyboard in Resources */,
+				95E24FF622BFD25300CFA533 /* TableHeaderCell.xib in Resources */,
+				95E24FEE22BFBEDE00CFA533 /* JupiterCondensedSCOsF.ttf in Resources */,
 				95E24FC522BD6F9D00CFA533 /* Minions.storyboard in Resources */,
 				95E24FD922BF299600CFA533 /* TripleTriad.storyboard in Resources */,
 				95E24FC322BD6F9600CFA533 /* Mounts.storyboard in Resources */,
 				95E24FC122BD6F8700CFA533 /* Achievements.storyboard in Resources */,
 				95E24F9522BD2DE700CFA533 /* Assets.xcassets in Resources */,
+				9509E34822C0215C000C9F50 /* AchievementCategoryCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,18 +401,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				95E24FA722BD2EC400CFA533 /* MountListViewController.swift in Sources */,
+				95E24FF822BFD2D000CFA533 /* TableHeaderCell.swift in Sources */,
 				95E24FD122BEC1A700CFA533 /* CollectionViewCell.swift in Sources */,
 				95E24FDC22BF29C100CFA533 /* TTCardsViewController.swift in Sources */,
 				95E24FAD22BD2FFC00CFA533 /* Mount.swift in Sources */,
 				95E24FCE22BDDC1B00CFA533 /* TabBarController.swift in Sources */,
+				9509E34422C00B8E000C9F50 /* Array+Extensions.swift in Sources */,
+				95E24FFF22BFD45500CFA533 /* FFXIVTheme.swift in Sources */,
+				9509E33E22BFE0C1000C9F50 /* UITabBar+Extensions.swift in Sources */,
 				95E24FE222BF2E5700CFA533 /* MinionDetailViewController.swift in Sources */,
 				95E24FD622BF28B000CFA533 /* TTPack.swift in Sources */,
+				95E24FE722BFAA1F00CFA533 /* AchievementPointsCell.swift in Sources */,
 				95E24FC922BDD35600CFA533 /* MinionListViewController.swift in Sources */,
 				95E24FAA22BD2F2100CFA533 /* FFXIVCollectService.swift in Sources */,
+				9509E34022BFE97C000C9F50 /* UIView+Extensions.swift in Sources */,
 				95E24FB322BD380B00CFA533 /* MountDetailsViewController.swift in Sources */,
+				9509E34222BFEE4E000C9F50 /* AchievementCategoryCell.swift in Sources */,
+				95E24FE422BFA94500CFA533 /* AchievementsViewController.swift in Sources */,
 				95E24FE022BF2C1600CFA533 /* TTCardsDetailViewController.swift in Sources */,
+				9509E34B22C03096000C9F50 /* AchievementsCategoryViewController.swift in Sources */,
 				95E24FCC22BDD41100CFA533 /* Minion.swift in Sources */,
-				95E24FB922BD67F000CFA533 /* AchievementsViewController.swift in Sources */,
 				95E24FD422BF088500CFA533 /* TTCard.swift in Sources */,
 				95E24FC722BD719E00CFA533 /* Achievement.swift in Sources */,
 				95E24FBC22BD6A3100CFA533 /* UIImageView+Extensions.swift in Sources */,
