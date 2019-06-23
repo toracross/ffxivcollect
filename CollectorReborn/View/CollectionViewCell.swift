@@ -30,6 +30,9 @@ class CollectionViewCell: UICollectionViewCell {
         case .tripleTriadCards:
             guard let card = data as? TTCards else { return }
             setCard(with: card)
+        case .tripleTriadCardPacks:
+            guard let card = data as? TTCardPacks else { return }
+            setPack(with: card)
         default: break
         }
     }
@@ -37,27 +40,35 @@ class CollectionViewCell: UICollectionViewCell {
 
 // MARK: - Achievements
 private extension CollectionViewCell {
-    func setAchievements(with data: Achievements) {
-        iconImageView.setImageFromURL(string: data.icon)
+    func setAchievements(with achievement: Achievements) {
+        iconImageView.setImageFromURL(string: achievement.icon)
     }
 }
 
 // MARK: - Minions
 private extension CollectionViewCell {
-    func setMinion(with data: Minions) {
-        iconImageView.setImageFromURL(string: data.icon)
+    func setMinion(with minion: Minions) {
+        iconImageView.setImageFromURL(string: minion.image)
     }
 }
 
 // MARK: - Mounts
 private extension CollectionViewCell {
-    func setMount(with data: Mounts) {
-        iconImageView.setImageFromURL(string: data.icon)
+    func setMount(with mount: Mounts) {
+        iconImageView.setImageFromURL(string: mount.image)
     }
 }
 
+// MARK: - Triple Triad Cards
 private extension CollectionViewCell {
-    func setCard(with data: TTCards) {
-        iconImageView.setImageFromURL(string: data.icon)
+    func setCard(with card: TTCards) {
+        iconImageView.setImageFromURL(string: card.image)
+    }
+}
+
+// MARK: - Triple Triad Card Packs
+private extension CollectionViewCell {
+    func setPack(with pack: TTCardPacks) {
+//        iconImageView.setImageFromURL(string: data.)
     }
 }

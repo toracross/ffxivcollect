@@ -1,37 +1,39 @@
 //
-//  TestViewController.swift
+//  TTCardsViewController.swift
 //  CollectorReborn
 //
-//  Created by Wellison Pereira on 6/21/19.
+//  Created by Wellison Pereira on 6/22/19.
 //  Copyright © 2019 ToraCross Studios. All rights reserved.
 //
 
 import UIKit
 
-class MountListViewController: UIViewController {
+class TTCardsViewController: UIViewController {
     
     // Outlets
     @IBOutlet weak var collectionView: UICollectionView!
-    
-    // Variables
-    private var mounts: [Mounts] = []
 
+    // Variables
+    private var cards: [TTCards] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupUI()
-        testAPI()
+        getCards()
     }
+    
+    // Storyboard Actions
     
     // Functions
     private func setupUI() {
-        navigationItem.title = "Mounts"
+        navigationItem.title = "Triple Triad Cards"
     }
     
-    private func testAPI() {
-        FFXIVCollectService.shared.requestData(for: .mounts) { [weak self] (mounts: Mount?) in
-            guard let strongSelf = self, let mounts = mounts?.mounts else { return }
-            strongSelf.mounts = mounts
+    private func getCards() {
+        FFXIVCollectService.shared.requestData(for: .tripleTriadCards) { [weak self] (cards: TTCard?) in
+            guard let strongSelf = self, let cards = cards?.cards else { return }
+            strongSelf.cards = cards
             
             DispatchQueue.main.async {
                 strongSelf.collectionView.reloadData()
@@ -39,38 +41,34 @@ class MountListViewController: UIViewController {
         }
     }
     
-    private func presentDetailedView(with mount: Mounts) {
-        let viewController = MountDetailsViewController(mount: mount)
+    private func presentDetailedView(with card: TTCards) {
+        let viewController = TTCardsDetailViewController(card: card)
         navigationController?.pushViewController(viewController, animated: true)
     }
-    
+
 }
 
-extension MountListViewController: UICollectionViewDelegate {
+extension TTCardsViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        presentDetailedView(with: mounts[indexPath.item])
+        presentDetailedView(with: cards[indexPath.item])
     }
 }
 
-extension MountListViewController: UICollectionViewDelegateFlowLayout {
+extension TTCardsViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 60, height: 60)
     }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
-    }
 }
 
-extension MountListViewController: UICollectionViewDataSource {
+extension TTCardsViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return mounts.count
+        return cards.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as? CollectionViewCell else { return UICollectionViewCell() }
         
-        cell.setCell(for: .mounts, with: mounts[indexPath.item])
+        cell.setCell(for: .tripleTriadCards, with: cards[indexPath.item])
         
         return cell
     }

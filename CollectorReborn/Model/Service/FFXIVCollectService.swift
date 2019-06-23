@@ -22,6 +22,8 @@ final class FFXIVCollectService {
         case mounts
         case tripleTriadCard(name: String)
         case tripleTriadCards
+        case tripleTriadCardPack(name: String)
+        case tripleTriadCardPacks
     }
     
     static let shared = FFXIVCollectService()
@@ -46,6 +48,10 @@ final class FFXIVCollectService {
             url = URL(string: "\(APITriadURL)cards?name_en_cont=\(name)")
         case .tripleTriadCards:
             url = URL(string: "\(APITriadURL)cards")
+        case .tripleTriadCardPack(let name):
+            url = URL(string: "\(APITriadURL)packs?name_en_start=\(name)")
+        case .tripleTriadCardPacks:
+            url = URL(string: "\(APITriadURL)packs")
         }
         
         fetchData(with: url!) { (T) in completed(T) }

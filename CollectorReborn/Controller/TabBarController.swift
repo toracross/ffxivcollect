@@ -29,7 +29,11 @@ class TabBarController: UITabBarController {
         let minionViewController = minionStoryboard.instantiateViewController(withIdentifier: "MinionListNavigationController")
         minionViewController.tabBarItem = UITabBarItem(title: "Minions", image: UIImage(named: "minionguide"), selectedImage: UIImage(named: "minionguide"))
         
-        viewControllers = [achievementViewController, mountViewController, minionViewController]
+        let ttStoryboard = UIStoryboard(name: "TripleTriad", bundle: Bundle.main)
+        let ttViewController = ttStoryboard.instantiateViewController(withIdentifier: "TTCardsViewController")
+        ttViewController.tabBarItem = UITabBarItem(title: "Triple Triad", image: UIImage(named: "ttcard"), selectedImage: UIImage(named: "ttcard"))
+        
+        viewControllers = [achievementViewController, mountViewController, minionViewController, ttViewController]
     }
 
 }

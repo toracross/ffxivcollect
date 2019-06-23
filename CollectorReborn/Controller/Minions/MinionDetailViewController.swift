@@ -1,28 +1,28 @@
 //
-//  MountDetailsViewController.swift
+//  MinionDetailViewController.swift
 //  CollectorReborn
 //
-//  Created by Wellison Pereira on 6/21/19.
+//  Created by Wellison Pereira on 6/22/19.
 //  Copyright © 2019 ToraCross Studios. All rights reserved.
 //
 
 import UIKit
 
-class MountDetailsViewController: UIViewController {
-    
+class MinionDetailViewController: UIViewController {
+
     // Outlets
     
     // Variables
-    private var mount: Mounts
+    private var minion: Minions
     
     override func viewDidLoad() {
-        print(mount)
-        navigationItem.title = mount.name
+        print(minion)
+        navigationItem.title = minion.name
         view.backgroundColor = .white
     }
     
-    init(mount: Mounts) {
-        self.mount = mount
+    init(minion: Minions) {
+        self.minion = minion
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -33,5 +33,5 @@ class MountDetailsViewController: UIViewController {
     // Storyboard Actions
     
     // Functions
-    
+
 }

@@ -1,28 +1,28 @@
 //
-//  MountDetailsViewController.swift
+//  TTCardsDetailViewController.swift
 //  CollectorReborn
 //
-//  Created by Wellison Pereira on 6/21/19.
+//  Created by Wellison Pereira on 6/22/19.
 //  Copyright © 2019 ToraCross Studios. All rights reserved.
 //
 
 import UIKit
 
-class MountDetailsViewController: UIViewController {
+class TTCardsDetailViewController: UIViewController {
     
     // Outlets
     
     // Variables
-    private var mount: Mounts
+    private var card: TTCards
     
     override func viewDidLoad() {
-        print(mount)
-        navigationItem.title = mount.name
+        print(card)
+        navigationItem.title = card.name
         view.backgroundColor = .white
     }
     
-    init(mount: Mounts) {
-        self.mount = mount
+    init(card: TTCards) {
+        self.card = card
         super.init(nibName: nil, bundle: nil)
     }
     

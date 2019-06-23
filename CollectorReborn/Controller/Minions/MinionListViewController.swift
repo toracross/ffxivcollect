@@ -42,7 +42,8 @@ class MinionListViewController: UIViewController {
     }
     
     private func presentDetailedView(with minion: Minions) {
-        
+        let viewController = MinionDetailViewController(minion: minion)
+        navigationController?.pushViewController(viewController, animated: true)
     }
 
 }

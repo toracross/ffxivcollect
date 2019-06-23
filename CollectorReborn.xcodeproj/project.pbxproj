@@ -24,8 +24,13 @@
 		95E24FC922BDD35600CFA533 /* MinionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E24FC822BDD35600CFA533 /* MinionListViewController.swift */; };
 		95E24FCC22BDD41100CFA533 /* Minion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E24FCB22BDD41100CFA533 /* Minion.swift */; };
 		95E24FCE22BDDC1B00CFA533 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E24FCD22BDDC1B00CFA533 /* TabBarController.swift */; };
-		95E24FD122BEC1A700CFA533 /* AchievementsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E24FD022BEC1A700CFA533 /* AchievementsCell.swift */; };
+		95E24FD122BEC1A700CFA533 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E24FD022BEC1A700CFA533 /* CollectionViewCell.swift */; };
 		95E24FD422BF088500CFA533 /* TTCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E24FD322BF088500CFA533 /* TTCard.swift */; };
+		95E24FD622BF28B000CFA533 /* TTPack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E24FD522BF28B000CFA533 /* TTPack.swift */; };
+		95E24FD922BF299600CFA533 /* TripleTriad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95E24FD822BF299600CFA533 /* TripleTriad.storyboard */; };
+		95E24FDC22BF29C100CFA533 /* TTCardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E24FDB22BF29C100CFA533 /* TTCardsViewController.swift */; };
+		95E24FE022BF2C1600CFA533 /* TTCardsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E24FDF22BF2C1600CFA533 /* TTCardsDetailViewController.swift */; };
+		95E24FE222BF2E5700CFA533 /* MinionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E24FE122BF2E5700CFA533 /* MinionDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,8 +53,13 @@
 		95E24FC822BDD35600CFA533 /* MinionListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinionListViewController.swift; sourceTree = "<group>"; };
 		95E24FCB22BDD41100CFA533 /* Minion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Minion.swift; sourceTree = "<group>"; };
 		95E24FCD22BDDC1B00CFA533 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
-		95E24FD022BEC1A700CFA533 /* AchievementsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsCell.swift; sourceTree = "<group>"; };
+		95E24FD022BEC1A700CFA533 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		95E24FD322BF088500CFA533 /* TTCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTCard.swift; sourceTree = "<group>"; };
+		95E24FD522BF28B000CFA533 /* TTPack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTPack.swift; sourceTree = "<group>"; };
+		95E24FD822BF299600CFA533 /* TripleTriad.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TripleTriad.storyboard; sourceTree = "<group>"; };
+		95E24FDB22BF29C100CFA533 /* TTCardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTCardsViewController.swift; sourceTree = "<group>"; };
+		95E24FDF22BF2C1600CFA533 /* TTCardsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTCardsDetailViewController.swift; sourceTree = "<group>"; };
+		95E24FE122BF2E5700CFA533 /* MinionDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinionDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +112,7 @@
 				95E24FB422BD5B9700CFA533 /* Achievements */,
 				95E24FB522BD5B9B00CFA533 /* Mounts */,
 				95E24FB622BD5B9F00CFA533 /* Minions */,
+				95E24FDA22BF299E00CFA533 /* TripleTriad */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -109,7 +120,7 @@
 		95E24FA022BD2E4300CFA533 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				95E24FD022BEC1A700CFA533 /* AchievementsCell.swift */,
+				95E24FD022BEC1A700CFA533 /* CollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -133,6 +144,7 @@
 				95E24FC022BD6F8700CFA533 /* Achievements.storyboard */,
 				95E24FC222BD6F9600CFA533 /* Mounts.storyboard */,
 				95E24FC422BD6F9D00CFA533 /* Minions.storyboard */,
+				95E24FD822BF299600CFA533 /* TripleTriad.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -174,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				95E24FC822BDD35600CFA533 /* MinionListViewController.swift */,
+				95E24FE122BF2E5700CFA533 /* MinionDetailViewController.swift */,
 			);
 			path = Minions;
 			sourceTree = "<group>";
@@ -206,8 +219,18 @@
 			isa = PBXGroup;
 			children = (
 				95E24FD322BF088500CFA533 /* TTCard.swift */,
+				95E24FD522BF28B000CFA533 /* TTPack.swift */,
 			);
 			path = "Triple Triad";
+			sourceTree = "<group>";
+		};
+		95E24FDA22BF299E00CFA533 /* TripleTriad */ = {
+			isa = PBXGroup;
+			children = (
+				95E24FDB22BF29C100CFA533 /* TTCardsViewController.swift */,
+				95E24FDF22BF2C1600CFA533 /* TTCardsDetailViewController.swift */,
+			);
+			path = TripleTriad;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,6 +294,7 @@
 				95E24FA522BD2E9B00CFA533 /* Main.storyboard in Resources */,
 				95E24F9822BD2DE700CFA533 /* LaunchScreen.storyboard in Resources */,
 				95E24FC522BD6F9D00CFA533 /* Minions.storyboard in Resources */,
+				95E24FD922BF299600CFA533 /* TripleTriad.storyboard in Resources */,
 				95E24FC322BD6F9600CFA533 /* Mounts.storyboard in Resources */,
 				95E24FC122BD6F8700CFA533 /* Achievements.storyboard in Resources */,
 				95E24F9522BD2DE700CFA533 /* Assets.xcassets in Resources */,
@@ -285,12 +309,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				95E24FA722BD2EC400CFA533 /* MountListViewController.swift in Sources */,
-				95E24FD122BEC1A700CFA533 /* AchievementsCell.swift in Sources */,
+				95E24FD122BEC1A700CFA533 /* CollectionViewCell.swift in Sources */,
+				95E24FDC22BF29C100CFA533 /* TTCardsViewController.swift in Sources */,
 				95E24FAD22BD2FFC00CFA533 /* Mount.swift in Sources */,
 				95E24FCE22BDDC1B00CFA533 /* TabBarController.swift in Sources */,
+				95E24FE222BF2E5700CFA533 /* MinionDetailViewController.swift in Sources */,
+				95E24FD622BF28B000CFA533 /* TTPack.swift in Sources */,
 				95E24FC922BDD35600CFA533 /* MinionListViewController.swift in Sources */,
 				95E24FAA22BD2F2100CFA533 /* FFXIVCollectService.swift in Sources */,
 				95E24FB322BD380B00CFA533 /* MountDetailsViewController.swift in Sources */,
+				95E24FE022BF2C1600CFA533 /* TTCardsDetailViewController.swift in Sources */,
 				95E24FCC22BDD41100CFA533 /* Minion.swift in Sources */,
 				95E24FB922BD67F000CFA533 /* AchievementsViewController.swift in Sources */,
 				95E24FD422BF088500CFA533 /* TTCard.swift in Sources */,
