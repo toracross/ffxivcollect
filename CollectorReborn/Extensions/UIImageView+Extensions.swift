@@ -10,6 +10,7 @@ import UIKit
 
 extension UIImageView {
     public func setImageFromURL(string: String?) {
+        
         self.image = UIImage(named: "moogle")
         guard let urlString = string, let url = URL(string: urlString) else { return }
         

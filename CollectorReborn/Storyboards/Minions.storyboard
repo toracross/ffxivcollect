@@ -18,27 +18,57 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WsP-Av-8Q8">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fIE-zL-ao4">
                                 <rect key="frame" x="0.0" y="140" width="414" height="722"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fR1-JX-Izn">
+                                    <size key="itemSize" width="125" height="111"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionViewCell" id="OUn-l6-D01" customClass="CollectionViewCell" customModule="CollectorReborn" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="125" height="111"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="125" height="111"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="moogle" translatesAutoresizingMaskIntoConstraints="NO" id="qlb-6g-J31">
+                                                    <rect key="frame" x="0.0" y="0.0" width="125" height="111"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="qlb-6g-J31" firstAttribute="leading" secondItem="OUn-l6-D01" secondAttribute="leading" id="HtT-ZH-fal"/>
+                                            <constraint firstAttribute="trailing" secondItem="qlb-6g-J31" secondAttribute="trailing" id="K4P-ec-OgQ"/>
+                                            <constraint firstItem="qlb-6g-J31" firstAttribute="top" secondItem="OUn-l6-D01" secondAttribute="top" id="KRE-jU-pN4"/>
+                                            <constraint firstAttribute="bottom" secondItem="qlb-6g-J31" secondAttribute="bottom" id="fch-O9-TEu"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="iconImageView" destination="qlb-6g-J31" id="1ta-Bk-69k"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
                                 <connections>
-                                    <outlet property="dataSource" destination="2RL-IG-tUD" id="IKV-A7-uAZ"/>
-                                    <outlet property="delegate" destination="2RL-IG-tUD" id="LtZ-C6-YXf"/>
+                                    <outlet property="dataSource" destination="2RL-IG-tUD" id="oW6-ZY-2eN"/>
+                                    <outlet property="delegate" destination="2RL-IG-tUD" id="ae0-1y-608"/>
                                 </connections>
-                            </tableView>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="WsP-Av-8Q8" firstAttribute="leading" secondItem="Vlj-Lk-Eij" secondAttribute="leading" id="JU7-jp-0An"/>
-                            <constraint firstItem="Vlj-Lk-Eij" firstAttribute="trailing" secondItem="WsP-Av-8Q8" secondAttribute="trailing" id="LeZ-ca-xVe"/>
-                            <constraint firstItem="Vlj-Lk-Eij" firstAttribute="bottom" secondItem="WsP-Av-8Q8" secondAttribute="bottom" id="MDV-Ig-hIT"/>
-                            <constraint firstItem="WsP-Av-8Q8" firstAttribute="top" secondItem="Vlj-Lk-Eij" secondAttribute="top" id="X9K-Qo-0vF"/>
+                            <constraint firstItem="Vlj-Lk-Eij" firstAttribute="bottom" secondItem="fIE-zL-ao4" secondAttribute="bottom" id="QQ2-af-Fpp"/>
+                            <constraint firstItem="Vlj-Lk-Eij" firstAttribute="trailing" secondItem="fIE-zL-ao4" secondAttribute="trailing" id="UDh-TC-OcZ"/>
+                            <constraint firstItem="fIE-zL-ao4" firstAttribute="leading" secondItem="Vlj-Lk-Eij" secondAttribute="leading" id="ZLh-is-q3z"/>
+                            <constraint firstItem="fIE-zL-ao4" firstAttribute="top" secondItem="Vlj-Lk-Eij" secondAttribute="top" id="vWp-Jr-kgw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Vlj-Lk-Eij"/>
                     </view>
                     <navigationItem key="navigationItem" id="dOS-d1-jeJ"/>
                     <connections>
-                        <outlet property="tableView" destination="WsP-Av-8Q8" id="Zqd-5E-UXa"/>
+                        <outlet property="collectionView" destination="fIE-zL-ao4" id="b9v-eW-fp2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qbf-AX-ohL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -67,4 +97,7 @@
             <point key="canvasLocation" x="90" y="62"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="moogle" width="190" height="208"/>
+    </resources>
 </document>

@@ -11,7 +11,7 @@ import UIKit
 class MinionListViewController: UIViewController {
     
     // Outlets
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var collectionView: UICollectionView!
     
     // Variables
     private var minions: [Minions] = []
@@ -36,28 +36,40 @@ class MinionListViewController: UIViewController {
             strongSelf.minions = minions
             
             DispatchQueue.main.async {
-                strongSelf.tableView.reloadData()
+                strongSelf.collectionView.reloadData()
             }
         }
     }
+    
+    private func presentDetailedView(with minion: Minions) {
+        
+    }
 
 }
 
-extension MinionListViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(minions[indexPath.row])
+extension MinionListViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        presentDetailedView(with: minions[indexPath.item])
     }
 }
 
-extension MinionListViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+extension MinionListViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 60, height: 60)
+    }
+}
+
+extension MinionListViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return minions.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = minions[indexPath.row].name
-        cell.imageView?.setImageFromURL(string: minions[indexPath.row].icon)
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as? CollectionViewCell else { return UICollectionViewCell() }
+        
+        cell.setCell(for: .minions, with: minions[indexPath.item])
+        
         return cell
     }
 }
+

@@ -19,15 +19,15 @@ class TabBarController: UITabBarController {
     private func setupTabBar() {
         let achievementStoryboard = UIStoryboard(name: "Achievements", bundle: Bundle.main)
         let achievementViewController = achievementStoryboard.instantiateViewController(withIdentifier: "AchievementNavigationController")
-        achievementViewController.tabBarItem = UITabBarItem(title: "Achievements", image: nil, selectedImage: nil)
+        achievementViewController.tabBarItem = UITabBarItem(title: "Achievements", image: UIImage(named: "achievements"), selectedImage: UIImage(named: "achievements"))
         
         let mountStoryboard = UIStoryboard(name: "Mounts", bundle: Bundle.main)
         let mountViewController = mountStoryboard.instantiateViewController(withIdentifier: "MountListNavigationController")
-        mountViewController.tabBarItem = UITabBarItem(title: "Mounts", image: nil, selectedImage: nil)
+        mountViewController.tabBarItem = UITabBarItem(title: "Mounts", image: UIImage(named: "mountguide"), selectedImage: UIImage(named: "mountguide"))
         
         let minionStoryboard = UIStoryboard(name: "Minions", bundle: Bundle.main)
         let minionViewController = minionStoryboard.instantiateViewController(withIdentifier: "MinionListNavigationController")
-        minionViewController.tabBarItem = UITabBarItem(title: "Minions", image: nil, selectedImage: nil)
+        minionViewController.tabBarItem = UITabBarItem(title: "Minions", image: UIImage(named: "minionguide"), selectedImage: UIImage(named: "minionguide"))
         
         viewControllers = [achievementViewController, mountViewController, minionViewController]
     }

@@ -11,7 +11,7 @@ import UIKit
 class AchievementsViewController: UIViewController {
     
     // Outlets
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var collectionView: UICollectionView!
     
     // Variables
     private var achievements: [Achievements] = []
@@ -36,28 +36,35 @@ class AchievementsViewController: UIViewController {
             strongSelf.achievements = achievements
             
             DispatchQueue.main.async {
-                strongSelf.tableView.reloadData()
+                strongSelf.collectionView.reloadData()
             }
         }
     }
     
 }
 
-extension AchievementsViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(achievements[indexPath.row])
+extension AchievementsViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(achievements[indexPath.item])
     }
 }
 
-extension AchievementsViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+extension AchievementsViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 60, height: 60)
+    }
+}
+
+extension AchievementsViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return achievements.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = achievements[indexPath.row].name
-        cell.imageView?.setImageFromURL(string: achievements[indexPath.row].icon)
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as? CollectionViewCell else { return UICollectionViewCell() }
+        
+        cell.setCell(for: .achievements, with: achievements[indexPath.item])
+        
         return cell
     }
 }

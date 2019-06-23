@@ -8,6 +8,9 @@
 
 import Foundation
 
+public let APICollectURL = "https://collect.raelys.com/api/"
+public let APITriadURL = "https://triad.raelys.com/api/"
+
 final class FFXIVCollectService {
     
     enum RequestType {
@@ -17,159 +20,47 @@ final class FFXIVCollectService {
         case minions
         case mount(name: String)
         case mounts
+        case tripleTriadCard(name: String)
+        case tripleTriadCards
     }
     
     static let shared = FFXIVCollectService()
     
     func requestData<T: Decodable>(for type: RequestType, completed: @escaping (T?) -> ()) {
+        var url: URL?
+        
         switch type {
         case .achievement(let name):
-            getAchievement(with: name) { (T) in completed(T) }
+            url = URL(string: "\(APICollectURL)achievements?name_en_cont=\(name)")
         case .achievements:
-            getAchievements { (T) in completed(T) }
+            url = URL(string: "\(APICollectURL)achievements?limit=9000")
         case .minion(let name):
-            getMinion(with: name) { (T) in completed(T) }
+            url = URL(string: "\(APICollectURL)minions?name_en_cont=\(name)")
         case .minions:
-            getMinions { (T) in completed(T) }
+            url = URL(string: "\(APICollectURL)minions?limit=9000")
         case .mount(let name):
-            getMount(with: name) { (T) in completed(T) }
+            url = URL(string: "\(APICollectURL)mounts?name_en_cont=\(name)")
         case .mounts:
-            getMounts { (T) in completed(T) }
+            url = URL(string: "\(APICollectURL)mounts?limit=9000")
+        case .tripleTriadCard(let name):
+            url = URL(string: "\(APITriadURL)cards?name_en_cont=\(name)")
+        case .tripleTriadCards:
+            url = URL(string: "\(APITriadURL)cards")
         }
+        
+        fetchData(with: url!) { (T) in completed(T) }
     }
     
-}
-
-// MARK: - Achievements
-private extension FFXIVCollectService {
-    
-    func getAchievement<T: Decodable>(with name: String, completed: @escaping (T?) -> ()) {
-        let urlString = "https://collect.raelys.com/api/achievements?name_en_cont=\(name)"
-        let url = URL(string: urlString)!
-        
+    func fetchData<T: Decodable>(with url: URL, completed: @escaping (T?) -> ()) {
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             guard error == nil, let data = data else {
                 completed(nil)
                 return
             }
             
-            let decoder = JSONDecoder()
             do {
-                let mounts = try decoder.decode(T.self, from: data)
-                completed(mounts)
-            } catch let error {
-                print(error.localizedDescription)
-            }
-            
-        }.resume()
-    }
-    
-    func getAchievements<T: Decodable>(completed: @escaping (T?) -> ()) {
-        let urlString = "https://collect.raelys.com/api/achievements?limit=9000"
-        let url = URL(string: urlString)!
-        
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
-            guard error == nil, let data = data else {
-                completed(nil)
-                return
-            }
-            
-            let decoder = JSONDecoder()
-            do {
-                let results = try decoder.decode(T.self, from: data)
-                completed(results)
-            } catch let error {
-                print(error)
-            }
-            
-        }.resume()
-    }
-    
-}
-
-// MARK: - Minions
-private extension FFXIVCollectService {
-    func getMinion<T: Decodable>(with name: String, completed: @escaping (T?) -> ()) {
-        let urlString = "https://collect.raelys.com/api/minions?name_en_cont=\(name)"
-        let url = URL(string: urlString)!
-        
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
-            guard error == nil, let data = data else {
-                completed(nil)
-                return
-            }
-            
-            let decoder = JSONDecoder()
-            do {
-                let mounts = try decoder.decode(T.self, from: data)
-                completed(mounts)
-            } catch let error {
-                print(error.localizedDescription)
-            }
-            
-        }.resume()
-    }
-    
-    func getMinions<T: Decodable>(completed: @escaping (T?) -> ()) {
-        let urlString = "https://collect.raelys.com/api/minions?limit=9000"
-        let url = URL(string: urlString)!
-        
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
-            guard error == nil, let data = data else {
-                completed(nil)
-                return
-            }
-            
-            let decoder = JSONDecoder()
-            do {
-                let results = try decoder.decode(T.self, from: data)
-                completed(results)
-            } catch let error {
-                print(error)
-            }
-            
-        }.resume()
-    }
-}
-
-// MARK: - Mounts
-private extension FFXIVCollectService {
-    
-    func getMount<T: Decodable>(with name: String, completed: @escaping (T?) -> ()) {
-        let urlString = "https://collect.raelys.com/api/mounts?name_en_cont=\(name)"
-        let url = URL(string: urlString)!
-        
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
-            guard error == nil, let data = data else {
-                completed(nil)
-                return
-            }
-            
-            let decoder = JSONDecoder()
-            do {
-                let mounts = try decoder.decode(T.self, from: data)
-                completed(mounts)
-            } catch let error {
-                print(error.localizedDescription)
-            }
-            
-        }.resume()
-    }
-    
-    func getMounts<T: Decodable>(completed: @escaping (T?) -> ()) {
-        let urlString = "https://collect.raelys.com/api/mounts?limit=9000"
-        let url = URL(string: urlString)!
-        
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
-            guard error == nil, let data = data else {
-                completed(nil)
-                return
-            }
-            
-            let decoder = JSONDecoder()
-            do {
-                let results = try decoder.decode(T.self, from: data)
-                completed(results)
+                let json = try JSONDecoder().decode(T.self, from: data)
+                completed(json)
             } catch let error {
                 print(error)
             }

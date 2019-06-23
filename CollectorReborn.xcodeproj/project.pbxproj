@@ -24,6 +24,8 @@
 		95E24FC922BDD35600CFA533 /* MinionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E24FC822BDD35600CFA533 /* MinionListViewController.swift */; };
 		95E24FCC22BDD41100CFA533 /* Minion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E24FCB22BDD41100CFA533 /* Minion.swift */; };
 		95E24FCE22BDDC1B00CFA533 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E24FCD22BDDC1B00CFA533 /* TabBarController.swift */; };
+		95E24FD122BEC1A700CFA533 /* AchievementsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E24FD022BEC1A700CFA533 /* AchievementsCell.swift */; };
+		95E24FD422BF088500CFA533 /* TTCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E24FD322BF088500CFA533 /* TTCard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		95E24FC822BDD35600CFA533 /* MinionListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinionListViewController.swift; sourceTree = "<group>"; };
 		95E24FCB22BDD41100CFA533 /* Minion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Minion.swift; sourceTree = "<group>"; };
 		95E24FCD22BDDC1B00CFA533 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		95E24FD022BEC1A700CFA533 /* AchievementsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsCell.swift; sourceTree = "<group>"; };
+		95E24FD322BF088500CFA533 /* TTCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +109,7 @@
 		95E24FA022BD2E4300CFA533 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				95E24FD022BEC1A700CFA533 /* AchievementsCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -116,6 +121,7 @@
 				95E24FBD22BD6CE500CFA533 /* Achievement */,
 				95E24FAB22BD2FF400CFA533 /* Mount */,
 				95E24FCA22BDD3F700CFA533 /* Minion */,
+				95E24FD222BF087700CFA533 /* Triple Triad */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -196,6 +202,14 @@
 			path = Minion;
 			sourceTree = "<group>";
 		};
+		95E24FD222BF087700CFA533 /* Triple Triad */ = {
+			isa = PBXGroup;
+			children = (
+				95E24FD322BF088500CFA533 /* TTCard.swift */,
+			);
+			path = "Triple Triad";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -271,6 +285,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				95E24FA722BD2EC400CFA533 /* MountListViewController.swift in Sources */,
+				95E24FD122BEC1A700CFA533 /* AchievementsCell.swift in Sources */,
 				95E24FAD22BD2FFC00CFA533 /* Mount.swift in Sources */,
 				95E24FCE22BDDC1B00CFA533 /* TabBarController.swift in Sources */,
 				95E24FC922BDD35600CFA533 /* MinionListViewController.swift in Sources */,
@@ -278,6 +293,7 @@
 				95E24FB322BD380B00CFA533 /* MountDetailsViewController.swift in Sources */,
 				95E24FCC22BDD41100CFA533 /* Minion.swift in Sources */,
 				95E24FB922BD67F000CFA533 /* AchievementsViewController.swift in Sources */,
+				95E24FD422BF088500CFA533 /* TTCard.swift in Sources */,
 				95E24FC722BD719E00CFA533 /* Achievement.swift in Sources */,
 				95E24FBC22BD6A3100CFA533 /* UIImageView+Extensions.swift in Sources */,
 				95E24F8E22BD2DE600CFA533 /* AppDelegate.swift in Sources */,

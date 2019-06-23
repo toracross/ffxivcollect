@@ -13,13 +13,14 @@ class MountDetailsViewController: UIViewController {
     // Outlets
     
     // Variables
-    private var mount: Mount
+    private var mount: Mounts
     
     override func viewDidLoad() {
-        print(mount)
+        navigationItem.title = mount.name
+        view.backgroundColor = .white
     }
     
-    init(mount: Mount) {
+    init(mount: Mounts) {
         self.mount = mount
         super.init(nibName: nil, bundle: nil)
     }

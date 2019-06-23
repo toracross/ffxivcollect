@@ -11,7 +11,7 @@ import UIKit
 class MountListViewController: UIViewController {
     
     // Outlets
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var collectionView: UICollectionView!
     
     // Variables
     private var mounts: [Mounts] = []
@@ -34,29 +34,40 @@ class MountListViewController: UIViewController {
             strongSelf.mounts = mounts
             
             DispatchQueue.main.async {
-                strongSelf.tableView.reloadData()
+                strongSelf.collectionView.reloadData()
             }
         }
     }
     
+    private func presentDetailedView(with mount: Mounts) {
+        let viewController = MountDetailsViewController(mount: mount)
+        navigationController?.pushViewController(viewController, animated: true)
+    }
+    
 }
 
-extension MountListViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(mounts[indexPath.row])
+extension MountListViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        presentDetailedView(with: mounts[indexPath.item])
     }
 }
 
+extension MountListViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 60, height: 60)
+    }
+}
 
-extension MountListViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+extension MountListViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return mounts.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = mounts[indexPath.row].name
-        cell.imageView?.setImageFromURL(string: mounts[indexPath.row].icon)
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as? CollectionViewCell else { return UICollectionViewCell() }
+        
+        cell.setCell(for: .mounts, with: mounts[indexPath.item])
+        
         return cell
     }
 }
