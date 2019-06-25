@@ -84,7 +84,7 @@
         <scene sceneID="QTV-9A-lE9">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mog-D0-3Nb" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="Byd-61-Y82" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AchievementListViewController" id="Byd-61-Y82" customClass="AchievementListViewController" customModule="CollectorReborn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3E9-eC-Y23">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -96,6 +96,10 @@
                                 <color key="sectionIndexColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Byd-61-Y82" id="Ec1-gi-5bS"/>
+                                    <outlet property="delegate" destination="Byd-61-Y82" id="PtA-la-FJ3"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" name="backgroundColor"/>
@@ -108,6 +112,9 @@
                         <viewLayoutGuide key="safeArea" id="Ohd-vF-sUV"/>
                     </view>
                     <navigationItem key="navigationItem" title="Section" largeTitleDisplayMode="always" id="sYS-xK-Alz"/>
+                    <connections>
+                        <outlet property="tableView" destination="N5n-ki-XjC" id="YVl-DP-oe3"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="464" y="-476"/>

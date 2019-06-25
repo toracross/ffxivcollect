@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct TTCard: Decodable {
+struct TTCard: Codable {
     
     let cards: [TTCards]?
     
@@ -22,7 +22,7 @@ struct TTCard: Decodable {
     
 }
 
-struct TTCards: Decodable {
+struct TTCards: Codable {
     
     let id: Int?
     let sortId: Int?
@@ -72,7 +72,7 @@ struct TTCards: Decodable {
     
 }
 
-struct TTCardStats: Decodable {
+struct TTCardStats: Codable {
     
     let numeric: TTCardStatsNumeric?
     let formatted: TTCardStatsFormatted?
@@ -84,7 +84,7 @@ struct TTCardStats: Decodable {
     
 }
 
-struct TTCardStatsNumeric: Decodable {
+struct TTCardStatsNumeric: Codable {
     
     let top: Int?
     let right: Int?
@@ -100,7 +100,7 @@ struct TTCardStatsNumeric: Decodable {
     
 }
 
-struct TTCardStatsFormatted: Decodable {
+struct TTCardStatsFormatted: Codable {
     
     let top: String?
     let right: String?
@@ -116,7 +116,7 @@ struct TTCardStatsFormatted: Decodable {
     
 }
 
-struct TTCardType: Decodable {
+struct TTCardType: Codable {
     
     let id: Int?
     let name: String?
@@ -130,7 +130,7 @@ struct TTCardType: Decodable {
     
 }
 
-struct TTCardSources: Decodable {
+struct TTCardSources: Codable {
     
     let npcs: [TTNPC]?
     let pack: TTCardPack?
@@ -146,7 +146,7 @@ struct TTCardSources: Decodable {
     
 }
 
-struct TTNPC: Decodable {
+struct TTNPC: Codable {
     
     let id: Int?
     let residentId: Int?
@@ -181,7 +181,7 @@ struct TTNPC: Decodable {
     
 }
 
-struct TTNPCLocation: Decodable {
+struct TTNPCLocation: Codable {
     
     let name: String?
     let region: String?
@@ -197,7 +197,7 @@ struct TTNPCLocation: Decodable {
     
 }
 
-struct TTNPCQuest: Decodable {
+struct TTNPCQuest: Codable {
     
     let id: Int?
     let name: String?
@@ -211,7 +211,7 @@ struct TTNPCQuest: Decodable {
     
 }
 
-struct TTCardPack: Decodable {
+struct TTCardPack: Codable {
     
     let id: Int?
     let name: String?

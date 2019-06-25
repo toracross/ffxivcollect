@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Achievement: Decodable {
+struct Achievement: Codable {
     
     let achievements: [Achievements]?
     
@@ -22,9 +22,8 @@ struct Achievement: Decodable {
     
 }
 
-struct Achievements: Decodable {
-    
-    let id: Int?
+struct Achievements: Codable, Comparable {
+    let id: Int
     let name: String?
     let description: String?
     let points: Int?
@@ -36,7 +35,7 @@ struct Achievements: Decodable {
     let type: AchievementType
     let reward: AchievementReward?
     
-    init(id: Int?, name: String?, description: String?, points: Int?, order: Int?, patch: String?, owned: String?, icon: String?, category: AchievementCategory, type: AchievementType, reward: AchievementReward?) {
+    init(id: Int, name: String?, description: String?, points: Int?, order: Int?, patch: String?, owned: String?, icon: String?, category: AchievementCategory, type: AchievementType, reward: AchievementReward?) {
         self.id = id
         self.name = name
         self.description = description
@@ -50,19 +49,28 @@ struct Achievements: Decodable {
         self.reward = reward
     }
     
+    
+    static func < (lhs: Achievements, rhs: Achievements) -> Bool {
+        return lhs.id < rhs.id
+    }
+    
+    static func == (lhs: Achievements, rhs: Achievements) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
 }
 
-struct AchievementCategory: Decodable {
+struct AchievementCategory: Codable {
     let id: Int
     let name: String
 }
 
-struct AchievementType: Decodable, Hashable {
+struct AchievementType: Codable, Hashable {
     let id: Int
     let name: String
 }
 
-struct AchievementReward: Decodable {
+struct AchievementReward: Codable {
     let type: String?
     let title: AchievementRewardTitle?
     let name: String?
@@ -74,7 +82,7 @@ struct AchievementReward: Decodable {
     }
 }
 
-struct AchievementRewardTitle: Decodable {
+struct AchievementRewardTitle: Codable {
     let id: Int?
     let name: String?
     let femaleName: String?

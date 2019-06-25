@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct TTPack: Decodable {
+struct TTPack: Codable {
     
     let packs: [TTCardPacks]?
     
@@ -22,7 +22,7 @@ struct TTPack: Decodable {
     
 }
 
-struct TTCardPacks: Decodable {
+struct TTCardPacks: Codable {
     
     let id: Int?
     let name: String?

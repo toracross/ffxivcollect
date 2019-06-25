@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Minion: Decodable {
+struct Minion: Codable {
     
     let minions: [Minions]?
     
@@ -22,7 +22,7 @@ struct Minion: Decodable {
     
 }
 
-struct Minions: Decodable {
+struct Minions: Codable {
     
     let id: Int?
     let name: String?
@@ -41,17 +41,17 @@ struct Minions: Decodable {
     
 }
 
-struct MinionBehavior: Decodable {
+struct MinionBehavior: Codable {
     let id: Int?
     let name: String?
 }
 
-struct MinionRace: Decodable {
+struct MinionRace: Codable {
     let id: Int?
     let name: String?
 }
 
-struct MinionSources: Decodable {
+struct MinionSources: Codable {
     let type: String?
     let text: String?
     let relatedType: String?
@@ -65,7 +65,7 @@ struct MinionSources: Decodable {
     }
 }
 
-struct Verminion: Decodable {
+struct Verminion: Codable {
     
     let cost: Int?
     let attack: Int?
@@ -101,7 +101,7 @@ struct Verminion: Decodable {
     
 }
 
-struct VerminionSkillType: Decodable {
+struct VerminionSkillType: Codable {
     let id: Int?
     let name: String?
 }

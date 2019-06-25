@@ -11,23 +11,15 @@ import UIKit
 class MinionDetailViewController: UIViewController {
 
     // Outlets
+    @IBOutlet weak var minionImageView: UIImageView!
     
     // Variables
-    private var minion: Minions
+    var minion: Minions?
     
     override func viewDidLoad() {
         print(minion)
-        navigationItem.title = minion.name
-        view.backgroundColor = .white
-    }
-    
-    init(minion: Minions) {
-        self.minion = minion
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        navigationItem.title = minion?.name
+        minionImageView.setImageFromURL(string: minion?.image)
     }
     
     // Storyboard Actions

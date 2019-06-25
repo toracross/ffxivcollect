@@ -11,23 +11,15 @@ import UIKit
 class MountDetailsViewController: UIViewController {
     
     // Outlets
+    @IBOutlet weak var mountImageView: UIImageView!
     
     // Variables
-    private var mount: Mounts
+    var mount: Mounts?
     
     override func viewDidLoad() {
         print(mount)
-        navigationItem.title = mount.name
-        view.backgroundColor = .white
-    }
-    
-    init(mount: Mounts) {
-        self.mount = mount
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        navigationItem.title = mount?.name
+        mountImageView.setImageFromURL(string: mount?.image)
     }
     
     // Storyboard Actions

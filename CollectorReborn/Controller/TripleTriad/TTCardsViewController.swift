@@ -31,18 +31,24 @@ class TTCardsViewController: UIViewController {
     }
     
     private func getCards() {
+        showLoading()
         FFXIVCollectService.shared.requestData(for: .tripleTriadCards) { [weak self] (cards: TTCard?) in
-            guard let strongSelf = self, let cards = cards?.cards else { return }
+            guard let strongSelf = self, let cards = cards?.cards else {
+                self?.hideLoading()
+                return
+            }
             strongSelf.cards = cards
             
             DispatchQueue.main.async {
                 strongSelf.collectionView.reloadData()
+                strongSelf.hideLoading()
             }
         }
     }
     
     private func presentDetailedView(with card: TTCards) {
-        let viewController = TTCardsDetailViewController(card: card)
+        let viewController = storyboard?.instantiateViewController(withIdentifier: "TTCardsDetailViewController") as! TTCardsDetailViewController
+        viewController.card = card
         navigationController?.pushViewController(viewController, animated: true)
     }
 

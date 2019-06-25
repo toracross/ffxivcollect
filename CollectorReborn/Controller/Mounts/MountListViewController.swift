@@ -29,18 +29,24 @@ class MountListViewController: UIViewController {
     }
     
     private func testAPI() {
+        showLoading()
         FFXIVCollectService.shared.requestData(for: .mounts) { [weak self] (mounts: Mount?) in
-            guard let strongSelf = self, let mounts = mounts?.mounts else { return }
+            guard let strongSelf = self, let mounts = mounts?.mounts else {
+                self?.hideLoading()
+                return
+            }
             strongSelf.mounts = mounts
             
             DispatchQueue.main.async {
+                strongSelf.hideLoading()
                 strongSelf.collectionView.reloadData()
             }
         }
     }
     
     private func presentDetailedView(with mount: Mounts) {
-        let viewController = MountDetailsViewController(mount: mount)
+        let viewController = storyboard?.instantiateViewController(withIdentifier: "MountDetailsViewController") as! MountDetailsViewController
+        viewController.mount = mount
         navigationController?.pushViewController(viewController, animated: true)
     }
     

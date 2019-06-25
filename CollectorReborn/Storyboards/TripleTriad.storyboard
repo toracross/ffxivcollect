@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="u49-En-geO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,7 +21,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NTo-iE-XDc">
                                 <rect key="frame" x="0.0" y="140" width="414" height="722"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="A9O-bt-tQU">
                                     <size key="itemSize" width="125" height="111"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -40,6 +41,7 @@
                                                 </imageView>
                                             </subviews>
                                         </view>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="qdb-pY-PCy" secondAttribute="bottom" id="AzI-sM-ieb"/>
                                             <constraint firstItem="qdb-pY-PCy" firstAttribute="top" secondItem="ord-bi-Uy2" secondAttribute="top" id="B65-Sh-LsW"/>
@@ -57,7 +59,7 @@
                                 </connections>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name="backgroundColor"/>
                         <constraints>
                             <constraint firstItem="NTo-iE-XDc" firstAttribute="top" secondItem="BY5-pf-vWh" secondAttribute="top" id="XuL-1r-JMi"/>
                             <constraint firstItem="BY5-pf-vWh" firstAttribute="bottom" secondItem="NTo-iE-XDc" secondAttribute="bottom" id="dse-hk-VSj"/>
@@ -83,38 +85,62 @@
                     <view key="view" contentMode="scaleToFill" id="MON-ic-6o5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RHo-zH-Jcj">
+                                <rect key="frame" x="0.0" y="140" width="414" height="722"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" name="backgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Qbv-c3-b0k" firstAttribute="bottom" secondItem="RHo-zH-Jcj" secondAttribute="bottom" id="0vA-M0-8Sk"/>
+                            <constraint firstItem="Qbv-c3-b0k" firstAttribute="trailing" secondItem="RHo-zH-Jcj" secondAttribute="trailing" id="cEM-TB-JdC"/>
+                            <constraint firstItem="RHo-zH-Jcj" firstAttribute="leading" secondItem="Qbv-c3-b0k" secondAttribute="leading" id="hvj-f0-Ebc"/>
+                            <constraint firstItem="RHo-zH-Jcj" firstAttribute="top" secondItem="Qbv-c3-b0k" secondAttribute="top" id="q9S-hn-xWg"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Qbv-c3-b0k"/>
                     </view>
+                    <connections>
+                        <outlet property="cardImageView" destination="RHo-zH-Jcj" id="FA9-SU-yfd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qnc-nD-dgY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-178" y="177"/>
         </scene>
-        <!--Item 2-->
-        <scene sceneID="tlg-E1-Wht">
+        <!--Achievements Navigation Controller-->
+        <scene sceneID="HVn-P1-WI4">
             <objects>
-                <navigationController storyboardIdentifier="TTCardsViewController" automaticallyAdjustsScrollViewInsets="NO" id="u49-En-geO" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 2" id="YKL-gd-x0U"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mwX-3J-F3d" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController storyboardIdentifier="TTCardsViewController" title="Achievements Navigation Controller" automaticallyAdjustsScrollViewInsets="NO" id="bmK-qf-hIC" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item 1" id="wGm-kB-ONb"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="hBd-8O-kwj">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="F7g-7b-dnu">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" name="backgroundColor"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="JupiterCondensedSC" family="Jupiter Condensed SCOsF" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                         <textAttributes key="largeTitleTextAttributes">
-                            <fontDescription key="fontDescription" name="JupiterCondensedSC" family="Jupiter Condensed SCOsF" pointSize="20"/>
+                            <fontDescription key="fontDescription" name="JupiterCondensedSC" family="Jupiter Condensed SCOsF" pointSize="30"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="xoF-N7-DHL" kind="relationship" relationship="rootViewController" id="ziz-s0-eHW"/>
+                        <segue destination="xoF-N7-DHL" kind="relationship" relationship="rootViewController" id="sOX-is-F8e"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="EiC-GA-3dr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1899" y="177"/>
+            <point key="canvasLocation" x="-1838" y="177"/>
         </scene>
     </scenes>
     <resources>
         <image name="moogle" width="190" height="208"/>
+        <namedColor name="backgroundColor">
+            <color red="0.19599999487400055" green="0.19599999487400055" blue="0.19599999487400055" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

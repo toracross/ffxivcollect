@@ -31,18 +31,24 @@ class MinionListViewController: UIViewController {
     }
     
     private func getMinions() {
+        showLoading()
         FFXIVCollectService.shared.requestData(for: .minions) { [weak self] (minions: Minion?) in
-            guard let strongSelf = self, let minions = minions?.minions else { return }
+            guard let strongSelf = self, let minions = minions?.minions else {
+                self?.hideLoading()
+                return
+            }
             strongSelf.minions = minions
             
             DispatchQueue.main.async {
                 strongSelf.collectionView.reloadData()
+                strongSelf.hideLoading()
             }
         }
     }
     
     private func presentDetailedView(with minion: Minions) {
-        let viewController = MinionDetailViewController(minion: minion)
+        let viewController = storyboard?.instantiateViewController(withIdentifier: "MinionDetailViewController") as! MinionDetailViewController
+        viewController.minion = minion
         navigationController?.pushViewController(viewController, animated: true)
     }
 

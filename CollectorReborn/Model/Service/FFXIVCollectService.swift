@@ -15,7 +15,7 @@ final class FFXIVCollectService {
     
     enum RequestType {
         case achievement(name: String)
-        case achievements
+        case achievements(category: String, limit: Int)
         case minion(name: String)
         case minions
         case mount(name: String)
@@ -34,8 +34,9 @@ final class FFXIVCollectService {
         switch type {
         case .achievement(let name):
             url = URL(string: "\(APICollectURL)achievements?name_en_cont=\(name)")
-        case .achievements:
-            url = URL(string: "\(APICollectURL)achievements?limit=9000")
+        case .achievements(let category, let limit):
+            let newCategory = category.replacingOccurrences(of: "Grand Company", with: "Grand+Company")
+            url = URL(string: "\(APICollectURL)achievements?limit=\(limit)&category_type_name_en_eq=\(newCategory)")
         case .minion(let name):
             url = URL(string: "\(APICollectURL)minions?name_en_cont=\(name)")
         case .minions:
@@ -54,10 +55,15 @@ final class FFXIVCollectService {
             url = URL(string: "\(APITriadURL)packs")
         }
         
-        fetchData(with: url!) { (T) in completed(T) }
+        guard let safeUrl = url else {
+            completed(nil)
+            return
+        }
+        
+        fetchData(with: safeUrl) { (T) in completed(T) }
     }
     
-    func fetchData<T: Decodable>(with url: URL, completed: @escaping (T?) -> ()) {
+    private func fetchData<T: Decodable>(with url: URL, completed: @escaping (T?) -> ()) {
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             guard error == nil, let data = data else {
                 completed(nil)

@@ -11,23 +11,15 @@ import UIKit
 class TTCardsDetailViewController: UIViewController {
     
     // Outlets
+    @IBOutlet weak var cardImageView: UIImageView!
     
     // Variables
-    private var card: TTCards
+    var card: TTCards?
     
     override func viewDidLoad() {
         print(card)
-        navigationItem.title = card.name
-        view.backgroundColor = .white
-    }
-    
-    init(card: TTCards) {
-        self.card = card
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        navigationItem.title = card?.name
+        cardImageView.setImageFromURL(string: card?.image)
     }
     
     // Storyboard Actions

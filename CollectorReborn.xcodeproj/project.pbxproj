@@ -14,6 +14,13 @@
 		9509E34622C02110000C9F50 /* AchievementPointsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9509E34522C02110000C9F50 /* AchievementPointsCell.xib */; };
 		9509E34822C0215C000C9F50 /* AchievementCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9509E34722C0215C000C9F50 /* AchievementCategoryCell.xib */; };
 		9509E34B22C03096000C9F50 /* AchievementsCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9509E34922C0226B000C9F50 /* AchievementsCategoryViewController.swift */; };
+		955FBBF122C04D2600B7DA3F /* AchievementCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955FBBF022C04D2600B7DA3F /* AchievementCell.swift */; };
+		955FBBF322C04D2D00B7DA3F /* AchievementCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 955FBBF222C04D2D00B7DA3F /* AchievementCell.xib */; };
+		955FBBF522C04F3100B7DA3F /* AchievementListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955FBBF422C04F3100B7DA3F /* AchievementListViewController.swift */; };
+		955FBBF722C0547400B7DA3F /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955FBBF622C0547400B7DA3F /* UIApplication+Extensions.swift */; };
+		955FBBF922C0671E00B7DA3F /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955FBBF822C0671E00B7DA3F /* UIViewController+Extensions.swift */; };
+		955FBBFB22C0719600B7DA3F /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955FBBFA22C0719600B7DA3F /* UITableView+Extensions.swift */; };
+		955FBBFD22C071BD00B7DA3F /* UICollectionView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955FBBFC22C071BD00B7DA3F /* UICollectionView+Extensions.swift */; };
 		95E24F8E22BD2DE600CFA533 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E24F8D22BD2DE600CFA533 /* AppDelegate.swift */; };
 		95E24F9522BD2DE700CFA533 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95E24F9422BD2DE700CFA533 /* Assets.xcassets */; };
 		95E24F9822BD2DE700CFA533 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95E24F9622BD2DE700CFA533 /* LaunchScreen.storyboard */; };
@@ -44,7 +51,22 @@
 		95E24FF622BFD25300CFA533 /* TableHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95E24FF522BFD25300CFA533 /* TableHeaderCell.xib */; };
 		95E24FF822BFD2D000CFA533 /* TableHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E24FF722BFD2D000CFA533 /* TableHeaderCell.swift */; };
 		95E24FFF22BFD45500CFA533 /* FFXIVTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E24FFE22BFD45500CFA533 /* FFXIVTheme.swift */; };
+		95EFFC4922C1B55D00ED97F0 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EFFC4822C1B55D00ED97F0 /* String+Extensions.swift */; };
+		95EFFC5322C1BE8100ED97F0 /* CacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EFFC5222C1BE8100ED97F0 /* CacheService.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		95EFFC3522C1AF4100ED97F0 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		9509E33D22BFE0C1000C9F50 /* UITabBar+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITabBar+Extensions.swift"; sourceTree = "<group>"; };
@@ -54,6 +76,13 @@
 		9509E34522C02110000C9F50 /* AchievementPointsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AchievementPointsCell.xib; sourceTree = "<group>"; };
 		9509E34722C0215C000C9F50 /* AchievementCategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AchievementCategoryCell.xib; sourceTree = "<group>"; };
 		9509E34922C0226B000C9F50 /* AchievementsCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsCategoryViewController.swift; sourceTree = "<group>"; };
+		955FBBF022C04D2600B7DA3F /* AchievementCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementCell.swift; sourceTree = "<group>"; };
+		955FBBF222C04D2D00B7DA3F /* AchievementCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AchievementCell.xib; sourceTree = "<group>"; };
+		955FBBF422C04F3100B7DA3F /* AchievementListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementListViewController.swift; sourceTree = "<group>"; };
+		955FBBF622C0547400B7DA3F /* UIApplication+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extensions.swift"; sourceTree = "<group>"; };
+		955FBBF822C0671E00B7DA3F /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		955FBBFA22C0719600B7DA3F /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
+		955FBBFC22C071BD00B7DA3F /* UICollectionView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extensions.swift"; sourceTree = "<group>"; };
 		95E24F8A22BD2DE600CFA533 /* CollectorReborn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollectorReborn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95E24F8D22BD2DE600CFA533 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95E24F9422BD2DE700CFA533 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -86,6 +115,8 @@
 		95E24FF522BFD25300CFA533 /* TableHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableHeaderCell.xib; sourceTree = "<group>"; };
 		95E24FF722BFD2D000CFA533 /* TableHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableHeaderCell.swift; sourceTree = "<group>"; };
 		95E24FFE22BFD45500CFA533 /* FFXIVTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFXIVTheme.swift; sourceTree = "<group>"; };
+		95EFFC4822C1B55D00ED97F0 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		95EFFC5222C1BE8100ED97F0 /* CacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				95E24FA922BD2F2100CFA533 /* FFXIVCollectService.swift */,
+				95EFFC5222C1BE8100ED97F0 /* CacheService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -199,6 +231,7 @@
 			children = (
 				95E24FE322BFA94500CFA533 /* AchievementsViewController.swift */,
 				9509E34922C0226B000C9F50 /* AchievementsCategoryViewController.swift */,
+				955FBBF422C04F3100B7DA3F /* AchievementListViewController.swift */,
 			);
 			path = Achievements;
 			sourceTree = "<group>";
@@ -225,9 +258,14 @@
 			isa = PBXGroup;
 			children = (
 				95E24FBB22BD6A3100CFA533 /* UIImageView+Extensions.swift */,
+				955FBBF622C0547400B7DA3F /* UIApplication+Extensions.swift */,
 				9509E33D22BFE0C1000C9F50 /* UITabBar+Extensions.swift */,
 				9509E33F22BFE97C000C9F50 /* UIView+Extensions.swift */,
 				9509E34322C00B8E000C9F50 /* Array+Extensions.swift */,
+				955FBBF822C0671E00B7DA3F /* UIViewController+Extensions.swift */,
+				955FBBFA22C0719600B7DA3F /* UITableView+Extensions.swift */,
+				955FBBFC22C071BD00B7DA3F /* UICollectionView+Extensions.swift */,
+				95EFFC4822C1B55D00ED97F0 /* String+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -273,6 +311,8 @@
 				95E24FE622BFAA1F00CFA533 /* AchievementPointsCell.swift */,
 				9509E34722C0215C000C9F50 /* AchievementCategoryCell.xib */,
 				9509E34122BFEE4E000C9F50 /* AchievementCategoryCell.swift */,
+				955FBBF222C04D2D00B7DA3F /* AchievementCell.xib */,
+				955FBBF022C04D2600B7DA3F /* AchievementCell.swift */,
 			);
 			path = Achievements;
 			sourceTree = "<group>";
@@ -330,6 +370,7 @@
 				95E24F8622BD2DE600CFA533 /* Sources */,
 				95E24F8722BD2DE600CFA533 /* Frameworks */,
 				95E24F8822BD2DE600CFA533 /* Resources */,
+				95EFFC3522C1AF4100ED97F0 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -381,6 +422,7 @@
 				9509E34622C02110000C9F50 /* AchievementPointsCell.xib in Resources */,
 				95E24FEA22BFB61F00CFA533 /* meiryo.ttc in Resources */,
 				95E24FA522BD2E9B00CFA533 /* Main.storyboard in Resources */,
+				955FBBF322C04D2D00B7DA3F /* AchievementCell.xib in Resources */,
 				95E24F9822BD2DE700CFA533 /* LaunchScreen.storyboard in Resources */,
 				95E24FF622BFD25300CFA533 /* TableHeaderCell.xib in Resources */,
 				95E24FEE22BFBEDE00CFA533 /* JupiterCondensedSCOsF.ttf in Resources */,
@@ -401,18 +443,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				95E24FA722BD2EC400CFA533 /* MountListViewController.swift in Sources */,
+				95EFFC4922C1B55D00ED97F0 /* String+Extensions.swift in Sources */,
 				95E24FF822BFD2D000CFA533 /* TableHeaderCell.swift in Sources */,
 				95E24FD122BEC1A700CFA533 /* CollectionViewCell.swift in Sources */,
 				95E24FDC22BF29C100CFA533 /* TTCardsViewController.swift in Sources */,
 				95E24FAD22BD2FFC00CFA533 /* Mount.swift in Sources */,
+				955FBBF722C0547400B7DA3F /* UIApplication+Extensions.swift in Sources */,
+				955FBBFD22C071BD00B7DA3F /* UICollectionView+Extensions.swift in Sources */,
 				95E24FCE22BDDC1B00CFA533 /* TabBarController.swift in Sources */,
 				9509E34422C00B8E000C9F50 /* Array+Extensions.swift in Sources */,
 				95E24FFF22BFD45500CFA533 /* FFXIVTheme.swift in Sources */,
 				9509E33E22BFE0C1000C9F50 /* UITabBar+Extensions.swift in Sources */,
 				95E24FE222BF2E5700CFA533 /* MinionDetailViewController.swift in Sources */,
 				95E24FD622BF28B000CFA533 /* TTPack.swift in Sources */,
+				955FBBF122C04D2600B7DA3F /* AchievementCell.swift in Sources */,
+				95EFFC5322C1BE8100ED97F0 /* CacheService.swift in Sources */,
 				95E24FE722BFAA1F00CFA533 /* AchievementPointsCell.swift in Sources */,
 				95E24FC922BDD35600CFA533 /* MinionListViewController.swift in Sources */,
+				955FBBFB22C0719600B7DA3F /* UITableView+Extensions.swift in Sources */,
 				95E24FAA22BD2F2100CFA533 /* FFXIVCollectService.swift in Sources */,
 				9509E34022BFE97C000C9F50 /* UIView+Extensions.swift in Sources */,
 				95E24FB322BD380B00CFA533 /* MountDetailsViewController.swift in Sources */,
@@ -424,7 +472,9 @@
 				95E24FD422BF088500CFA533 /* TTCard.swift in Sources */,
 				95E24FC722BD719E00CFA533 /* Achievement.swift in Sources */,
 				95E24FBC22BD6A3100CFA533 /* UIImageView+Extensions.swift in Sources */,
+				955FBBF522C04F3100B7DA3F /* AchievementListViewController.swift in Sources */,
 				95E24F8E22BD2DE600CFA533 /* AppDelegate.swift in Sources */,
+				955FBBF922C0671E00B7DA3F /* UIViewController+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -564,7 +614,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NG6UM76K5M;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = CollectorReborn/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -572,7 +627,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.toracross.CollectorReborn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -582,7 +637,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NG6UM76K5M;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = CollectorReborn/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -590,7 +650,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.toracross.CollectorReborn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

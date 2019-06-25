@@ -10,20 +10,55 @@ import UIKit
 
 class AchievementsViewController: UIViewController {
     
+    private enum Categories: Int {
+        case battle
+        case pvp
+        case character
+        case items
+        case crafting
+        case gathering
+        case quests
+        case exploration
+        case grandCompany
+        case legacy
+        
+        var limit: Int {
+            switch self {
+            case .battle:
+                return 304
+            case .pvp:
+                return 182
+            case .character:
+                return 324
+            case .items:
+                return 271
+            case .crafting:
+                return 172
+            case .gathering:
+                return 109
+            case .quests:
+                return 347
+            case .exploration:
+                return 158
+            case .grandCompany:
+                return 72
+            case .legacy:
+                return 261
+            }
+        }
+    }
+    
     // Outlets
     @IBOutlet weak var tableView: UITableView!
     
     // Variables
-    private let headers: [String] = ["Total Points", "Category"]
-    private var achievements: [Achievements] = []
-    private var titles: [String] = []
-    private var categoryCount: [Int] = []
+    private let headers = ["Total Points", "Category"]
+    private var sections = ["Battle", "PvP", "Character", "Items", "Crafting", "Gathering", "Quests", "Exploration", "Grand Company", "Legacy"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupUI()
-        fetchAchievements()
     }
     
     // Storyboard Actions
@@ -32,6 +67,7 @@ class AchievementsViewController: UIViewController {
     private func setupUI() {
         registerCells()
         setNavigationBar()
+        tableView.reloadWithAnimation(withDuration: 0.25)
     }
     
     private func registerCells() {
@@ -47,51 +83,17 @@ class AchievementsViewController: UIViewController {
     private func setNavigationBar() {
         navigationController?.navigationBar.shadowImage = FFXIVTheme.windowImage
     }
-    
-    private func fetchAchievements() {
-        FFXIVCollectService.shared.requestData(for: .achievements) { [weak self] (achievement: Achievement?) in
-            guard let strongSelf = self, let achievements = achievement?.achievements else { return }
-            let sortedAchievements = achievements.sorted(by: { $0.type.id < $1.type.id })
-            
-            strongSelf.achievements = sortedAchievements
-            strongSelf.titles = sortedAchievements.map({ $0.type.name }).removingDuplicates()
-            strongSelf.categoryCount = strongSelf.sortCategories(sortedAchievements)
-            
-            DispatchQueue.main.async {
-                strongSelf.tableView.reloadData()
-            }
-        }
-    }
-    
-    private func sortCategories(_ achievements: [Achievements]) -> [Int] {
-        var categories: [Int] = []
-        for category in achievements.map({ $0.type.id }).removingDuplicates() {
-            categories.append(achievements.filter({ $0.type.id == category }).count)
-        }
-        return categories
-    }
-    
-    private func filterCategories(_ achievements: [Achievements]) -> [Int] {
-        var categories: [Int] = []
-        for category in achievements.map({ $0.category.id }).removingDuplicates() {
-            categories.append(achievements.filter({ $0.category.id == category }).count)
-        }
-        return categories
-    }
-
 }
 
 extension AchievementsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let filteredAchievements = achievements.filter({ $0.type.name == titles[indexPath.row] })
-        let filteredNames = filteredAchievements.map({ $0.category.name }).removingDuplicates()
-        let filteredCategories = filterCategories(filteredAchievements)
+        if indexPath.section == 0 {
+            return
+        }
         
         let viewController = storyboard?.instantiateViewController(withIdentifier: "AchievementsCategoryViewController") as! AchievementsCategoryViewController
-        viewController.titleText = titles[indexPath.row]
-        viewController.achievements = filteredAchievements
-        viewController.titles = filteredNames
-        viewController.categoryCount = filteredCategories
+        viewController.titleText = sections[indexPath.row]
+        viewController.limit = Categories(rawValue: indexPath.row)?.limit ?? 0
         self.navigationController?.pushViewController(viewController, animated: true)
     }
 }
@@ -102,11 +104,7 @@ extension AchievementsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
-            return 1
-        } else {
-            return titles.count
-        }
+        return section == 0 ? 1 : sections.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -136,10 +134,9 @@ extension AchievementsViewController: UITableViewDataSource {
         } else {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "AchievementCategoryCell", for: indexPath) as? AchievementCategoryCell else { return UITableViewCell() }
             
-            cell.setAchievementCategory(with: titles[indexPath.row], and: categoryCount[indexPath.row])
+            cell.setAchievementCategory(with: sections[indexPath.row])
             
             return cell
-            
         }
         
     }

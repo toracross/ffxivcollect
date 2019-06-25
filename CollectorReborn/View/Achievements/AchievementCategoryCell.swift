@@ -19,9 +19,8 @@ class AchievementCategoryCell: UITableViewCell {
     }
     
     // Functions
-    func setAchievementCategory(with title: String?, and count: Int) {
+    func setAchievementCategory(with title: String?) {
         categoryLabel.text = title
-        totalLabel.text = "\(count)"
     }
 }
 

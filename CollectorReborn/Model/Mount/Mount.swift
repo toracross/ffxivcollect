@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Mount: Decodable {
+struct Mount: Codable {
     
     let mounts: [Mounts]?
     
@@ -22,7 +22,7 @@ struct Mount: Decodable {
     
 }
 
-struct Mounts: Decodable {
+struct Mounts: Codable {
     
     let id: Int?
     let name: String?
@@ -79,7 +79,7 @@ struct Mounts: Decodable {
     
 }
 
-struct MountSource: Decodable {
+struct MountSource: Codable {
     
     let type: String?
     let text: String?
