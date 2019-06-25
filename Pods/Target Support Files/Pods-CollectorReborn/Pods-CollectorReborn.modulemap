@@ -1,0 +1,6 @@
+framework module Pods_CollectorReborn {
+  umbrella header "Pods-CollectorReborn-umbrella.h"
+
+  export *
+  module * { export * }
+}

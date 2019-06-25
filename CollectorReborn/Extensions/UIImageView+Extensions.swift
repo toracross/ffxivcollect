@@ -7,23 +7,15 @@
 //
 
 import UIKit
+import SDWebImage
 
 extension UIImageView {
     public func setImageFromURL(string: String?) {
-        
-        self.image = UIImage(named: "moogle")
-        guard let urlString = string, let url = URL(string: urlString) else { return }
-        
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
-            guard let data = data else {
-                return
-            }
-            
-            DispatchQueue.main.async(execute: { () -> Void in
-                let image = UIImage(data: data)
-                self.image = image
-            })
-        }.resume()
+        guard let urlString = string else {
+            self.image = UIImage(named: "moogle")
+            return
+        }
+        self.sd_setImage(with: URL(string: urlString), placeholderImage: UIImage(named: "moogle"))
     }
 }
 
