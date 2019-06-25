@@ -20,7 +20,7 @@ class TTCardsViewController: UIViewController {
         super.viewDidLoad()
         
         setupUI()
-        getCards()
+        fetchCards()
     }
     
     // Storyboard Actions
@@ -30,13 +30,32 @@ class TTCardsViewController: UIViewController {
         navigationItem.title = "Triple Triad Cards"
     }
     
-    private func getCards() {
+    private func fetchCards() {
+        if let cacheData: TTCard = CacheService.loadData(key: CacheService.CacheKey.tripleTriad) {
+            fetchCardsFromCache(cards: cacheData)
+        } else {
+            fetchCardFromServer()
+        }
+    }
+    
+    private func fetchCardsFromCache(cards: TTCard) {
+        if let cards = cards.cards {
+            self.cards = cards
+            
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
+        }
+    }
+    
+    private func fetchCardFromServer() {
         showLoading()
         FFXIVCollectService.shared.requestData(for: .tripleTriadCards) { [weak self] (cards: TTCard?) in
-            guard let strongSelf = self, let cards = cards?.cards else {
+            guard let strongSelf = self, let data = cards, let cards = cards?.cards else {
                 self?.hideLoading()
                 return
             }
+            CacheService.saveData(type: data, key: CacheService.CacheKey.tripleTriad)
             strongSelf.cards = cards
             
             DispatchQueue.main.async {
@@ -62,7 +81,7 @@ extension TTCardsViewController: UICollectionViewDelegate {
 
 extension TTCardsViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 100, height: 100)
+        return CGSize(width: collectionView.bounds.width / 5, height: 100)
     }
 }
 

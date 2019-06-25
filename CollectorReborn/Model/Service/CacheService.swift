@@ -10,6 +10,12 @@ import Foundation
 
 class CacheService {
     
+    enum CacheKey {
+        static let mounts = "Mounts"
+        static let minions = "Minions"
+        static let tripleTriad = "Triple Triad"
+    }
+    
     class func saveData<T: Codable>(type: T, key: String) {
         let encoder = JSONEncoder()
         if let encoded = try? encoder.encode(type) {
@@ -28,6 +34,5 @@ class CacheService {
         }
         return nil
     }
-    
     
 }

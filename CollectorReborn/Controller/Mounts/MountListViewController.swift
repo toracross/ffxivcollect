@@ -20,7 +20,7 @@ class MountListViewController: UIViewController {
         super.viewDidLoad()
         
         setupUI()
-        testAPI()
+        fetchMounts()
     }
     
     // Functions
@@ -28,13 +28,32 @@ class MountListViewController: UIViewController {
         navigationItem.title = "Mounts"
     }
     
-    private func testAPI() {
+    private func fetchMounts() {
+        if let cacheData: Mount = CacheService.loadData(key: CacheService.CacheKey.mounts) {
+            fetchMountsFromCache(mount: cacheData)
+        } else {
+            fetchMountsFromServer()
+        }
+    }
+    
+    private func fetchMountsFromCache(mount: Mount) {
+        if let mounts = mount.mounts {
+            self.mounts = mounts
+            
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
+        }
+    }
+    
+    private func fetchMountsFromServer() {
         showLoading()
         FFXIVCollectService.shared.requestData(for: .mounts) { [weak self] (mounts: Mount?) in
-            guard let strongSelf = self, let mounts = mounts?.mounts else {
+            guard let strongSelf = self, let data = mounts, let mounts = data.mounts else {
                 self?.hideLoading()
                 return
             }
+            CacheService.saveData(type: data, key: CacheService.CacheKey.mounts)
             strongSelf.mounts = mounts
             
             DispatchQueue.main.async {
@@ -60,7 +79,7 @@ extension MountListViewController: UICollectionViewDelegate {
 
 extension MountListViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 60, height: 60)
+        return CGSize(width: collectionView.bounds.width / 5, height: 100)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {

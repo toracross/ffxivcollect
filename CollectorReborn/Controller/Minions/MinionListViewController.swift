@@ -20,7 +20,7 @@ class MinionListViewController: UIViewController {
         super.viewDidLoad()
         
         setupUI()
-        getMinions()
+        fetchMinions()
     }
     
     // Storyboard Actions
@@ -30,13 +30,32 @@ class MinionListViewController: UIViewController {
         navigationItem.title = "Minions"
     }
     
-    private func getMinions() {
+    private func fetchMinions() {
+        if let cacheData: Minion = CacheService.loadData(key: CacheService.CacheKey.minions) {
+            fetchMinionsFromCache(minion: cacheData)
+        } else {
+            fetchMinionsFromServer()
+        }
+    }
+    
+    private func fetchMinionsFromCache(minion: Minion) {
+        if let minions = minion.minions {
+            self.minions = minions
+            
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
+        }
+    }
+    
+    private func fetchMinionsFromServer() {
         showLoading()
         FFXIVCollectService.shared.requestData(for: .minions) { [weak self] (minions: Minion?) in
-            guard let strongSelf = self, let minions = minions?.minions else {
+            guard let strongSelf = self, let data = minions, let minions = minions?.minions else {
                 self?.hideLoading()
                 return
             }
+            CacheService.saveData(type: data, key: CacheService.CacheKey.minions)
             strongSelf.minions = minions
             
             DispatchQueue.main.async {
@@ -62,7 +81,7 @@ extension MinionListViewController: UICollectionViewDelegate {
 
 extension MinionListViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 60, height: 60)
+        return CGSize(width: collectionView.bounds.width / 5, height: 100)
     }
 }
 

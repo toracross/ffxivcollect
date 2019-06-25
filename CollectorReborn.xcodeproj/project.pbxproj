@@ -212,8 +212,8 @@
 		95E24FA822BD2F1600CFA533 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				95E24FA922BD2F2100CFA533 /* FFXIVCollectService.swift */,
 				95EFFC5222C1BE8100ED97F0 /* CacheService.swift */,
+				95E24FA922BD2F2100CFA533 /* FFXIVCollectService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";

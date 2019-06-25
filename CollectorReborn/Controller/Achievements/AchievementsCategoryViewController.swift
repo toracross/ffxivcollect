@@ -42,13 +42,13 @@ class AchievementsCategoryViewController: UIViewController {
     
     private func fetchAchievements() {
         if let cacheData: Achievement = CacheService.loadData(key: titleText) {
-            fetchAchievements(achievement: cacheData)
+            fetchAchievementsFromCache(achievement: cacheData)
         } else {
             fetchAchievementsFromServer()
         }
     }
     
-    private func fetchAchievements(achievement: Achievement) {
+    private func fetchAchievementsFromCache(achievement: Achievement) {
         if let achievements = achievement.achievements {
             self.achievements = achievements
             categories = achievements.map({ $0.category.name }).removingDuplicates()
