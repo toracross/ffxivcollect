@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -71,7 +70,7 @@
                     <navigationItem key="navigationItem" id="46Z-Jh-FkH"/>
                     <connections>
                         <outlet property="collectionView" destination="NTo-iE-XDc" id="w84-dh-eNB"/>
-                        <segue destination="sB8-un-sPO" kind="show" id="dOJ-W2-JO1"/>
+                        <segue destination="sB8-un-sPO" kind="show" identifier="triadSegue" id="dOJ-W2-JO1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fjJ-LH-9cU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -110,7 +109,6 @@
         <!--Achievements Navigation Controller-->
         <scene sceneID="HVn-P1-WI4">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mwX-3J-F3d" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="TTCardsViewController" title="Achievements Navigation Controller" automaticallyAdjustsScrollViewInsets="NO" id="bmK-qf-hIC" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item 1" id="wGm-kB-ONb"/>
                     <toolbarItems/>
@@ -133,6 +131,7 @@
                         <segue destination="xoF-N7-DHL" kind="relationship" relationship="rootViewController" id="sOX-is-F8e"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mwX-3J-F3d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1838" y="177"/>
         </scene>

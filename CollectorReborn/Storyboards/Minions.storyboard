@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -71,7 +70,7 @@
                     <navigationItem key="navigationItem" id="dOS-d1-jeJ"/>
                     <connections>
                         <outlet property="collectionView" destination="fIE-zL-ao4" id="b9v-eW-fp2"/>
-                        <segue destination="N6C-7E-NDz" kind="show" id="ehd-mM-EEL"/>
+                        <segue destination="N6C-7E-NDz" kind="show" identifier="minionSegue" id="ehd-mM-EEL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qbf-AX-ohL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -110,7 +109,6 @@
         <!--Achievements Navigation Controller-->
         <scene sceneID="ENL-Mg-My9">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="i4N-Ne-hTp" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="MinionListNavigationController" title="Achievements Navigation Controller" automaticallyAdjustsScrollViewInsets="NO" id="eo8-NM-iGm" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item 1" id="3FJ-Ki-UTx"/>
                     <toolbarItems/>
@@ -133,6 +131,7 @@
                         <segue destination="2RL-IG-tUD" kind="relationship" relationship="rootViewController" id="5oS-jY-beD"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i4N-Ne-hTp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="143" y="62"/>
         </scene>

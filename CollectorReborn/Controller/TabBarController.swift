@@ -37,7 +37,12 @@ class TabBarController: UITabBarController {
         let cardImage = UIImage(named: "ttcard\([0, 1, 2].randomElement() ?? 0)")?.withRenderingMode(.alwaysOriginal)
         ttViewController.tabBarItem = UITabBarItem(title: "Triple Triad", image: cardImage, selectedImage: cardImage)
         
-        viewControllers = [achievementViewController, mountViewController, minionViewController, ttViewController]
+        let optionsStoryboard = UIStoryboard(name: "Options", bundle: Bundle.main)
+        let optionsViewController = optionsStoryboard.instantiateViewController(withIdentifier: "OptionsViewController")
+        let optionsImage = UIImage(named: "ttcard1")?.withRenderingMode(.alwaysOriginal)
+        optionsViewController.tabBarItem = UITabBarItem(title: "Options", image: optionsImage, selectedImage: optionsImage)
+        
+        viewControllers = [achievementViewController, mountViewController, minionViewController, ttViewController, optionsViewController]
     }
 
 }

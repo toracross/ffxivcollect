@@ -17,7 +17,7 @@ class MountDetailsViewController: UIViewController {
     var mount: Mounts?
     
     override func viewDidLoad() {
-        print(mount)
+//        print(mount)
         navigationItem.title = mount?.name
         mountImageView.setImageFromURL(string: mount?.image)
     }

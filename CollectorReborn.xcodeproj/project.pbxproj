@@ -53,6 +53,10 @@
 		95E24FFF22BFD45500CFA533 /* FFXIVTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E24FFE22BFD45500CFA533 /* FFXIVTheme.swift */; };
 		95EFFC4922C1B55D00ED97F0 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EFFC4822C1B55D00ED97F0 /* String+Extensions.swift */; };
 		95EFFC5322C1BE8100ED97F0 /* CacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EFFC5222C1BE8100ED97F0 /* CacheService.swift */; };
+		E962496222C2AD5600DF63D6 /* Options.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E962496122C2AD5600DF63D6 /* Options.storyboard */; };
+		E962496422C2AD6400DF63D6 /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E962496322C2AD6400DF63D6 /* OptionsViewController.swift */; };
+		E962496A22C2ADC200DF63D6 /* OptionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E962496822C2ADC200DF63D6 /* OptionsCell.swift */; };
+		E962496B22C2ADC200DF63D6 /* OptionsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E962496922C2ADC200DF63D6 /* OptionsCell.xib */; };
 		EFB82AEA27F70B3076D94B51 /* Pods_CollectorReborn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEEFAE104D1233C4546457B9 /* Pods_CollectorReborn.framework */; };
 /* End PBXBuildFile section */
 
@@ -121,6 +125,10 @@
 		95EFFC5222C1BE8100ED97F0 /* CacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheService.swift; sourceTree = "<group>"; };
 		AEEFAE104D1233C4546457B9 /* Pods_CollectorReborn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CollectorReborn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF3663F4782BFD817218FB40 /* Pods-CollectorReborn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CollectorReborn.release.xcconfig"; path = "Target Support Files/Pods-CollectorReborn/Pods-CollectorReborn.release.xcconfig"; sourceTree = "<group>"; };
+		E962496122C2AD5600DF63D6 /* Options.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Options.storyboard; sourceTree = "<group>"; };
+		E962496322C2AD6400DF63D6 /* OptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OptionsViewController.swift; path = TripleTriad/OptionsViewController.swift; sourceTree = "<group>"; };
+		E962496822C2ADC200DF63D6 /* OptionsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OptionsCell.swift; path = Achievements/OptionsCell.swift; sourceTree = "<group>"; };
+		E962496922C2ADC200DF63D6 /* OptionsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = OptionsCell.xib; path = Achievements/OptionsCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				95E24FCD22BDDC1B00CFA533 /* TabBarController.swift */,
+				E962496322C2AD6400DF63D6 /* OptionsViewController.swift */,
 				95E24FB422BD5B9700CFA533 /* Achievements */,
 				95E24FB522BD5B9B00CFA533 /* Mounts */,
 				95E24FB622BD5B9F00CFA533 /* Minions */,
@@ -185,6 +194,8 @@
 		95E24FA022BD2E4300CFA533 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E962496822C2ADC200DF63D6 /* OptionsCell.swift */,
+				E962496922C2ADC200DF63D6 /* OptionsCell.xib */,
 				95E24FF422BFD24100CFA533 /* UICollectionView */,
 				95E24FF322BFD23C00CFA533 /* UITableView */,
 				95E24FE522BFAA1300CFA533 /* Achievements */,
@@ -212,6 +223,7 @@
 				95E24FC222BD6F9600CFA533 /* Mounts.storyboard */,
 				95E24FC422BD6F9D00CFA533 /* Minions.storyboard */,
 				95E24FD822BF299600CFA533 /* TripleTriad.storyboard */,
+				E962496122C2AD5600DF63D6 /* Options.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -381,7 +393,6 @@
 				73CE7C4DE8970A37B01C1DD1 /* Pods-CollectorReborn.debug.xcconfig */,
 				CF3663F4782BFD817218FB40 /* Pods-CollectorReborn.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -450,9 +461,11 @@
 				95E24FEA22BFB61F00CFA533 /* meiryo.ttc in Resources */,
 				95E24FA522BD2E9B00CFA533 /* Main.storyboard in Resources */,
 				955FBBF322C04D2D00B7DA3F /* AchievementCell.xib in Resources */,
+				E962496B22C2ADC200DF63D6 /* OptionsCell.xib in Resources */,
 				95E24F9822BD2DE700CFA533 /* LaunchScreen.storyboard in Resources */,
 				95E24FF622BFD25300CFA533 /* TableHeaderCell.xib in Resources */,
 				95E24FEE22BFBEDE00CFA533 /* JupiterCondensedSCOsF.ttf in Resources */,
+				E962496222C2AD5600DF63D6 /* Options.storyboard in Resources */,
 				95E24FC522BD6F9D00CFA533 /* Minions.storyboard in Resources */,
 				95E24FD922BF299600CFA533 /* TripleTriad.storyboard in Resources */,
 				95E24FC322BD6F9600CFA533 /* Mounts.storyboard in Resources */,
@@ -539,7 +552,9 @@
 				9509E34022BFE97C000C9F50 /* UIView+Extensions.swift in Sources */,
 				95E24FB322BD380B00CFA533 /* MountDetailsViewController.swift in Sources */,
 				9509E34222BFEE4E000C9F50 /* AchievementCategoryCell.swift in Sources */,
+				E962496422C2AD6400DF63D6 /* OptionsViewController.swift in Sources */,
 				95E24FE422BFA94500CFA533 /* AchievementsViewController.swift in Sources */,
+				E962496A22C2ADC200DF63D6 /* OptionsCell.swift in Sources */,
 				95E24FE022BF2C1600CFA533 /* TTCardsDetailViewController.swift in Sources */,
 				9509E34B22C03096000C9F50 /* AchievementsCategoryViewController.swift in Sources */,
 				95E24FCC22BDD41100CFA533 /* Minion.swift in Sources */,

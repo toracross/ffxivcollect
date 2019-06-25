@@ -17,7 +17,7 @@ class MinionDetailViewController: UIViewController {
     var minion: Minions?
     
     override func viewDidLoad() {
-        print(minion)
+//        print(minion)
         navigationItem.title = minion?.name
         minionImageView.setImageFromURL(string: minion?.image)
     }

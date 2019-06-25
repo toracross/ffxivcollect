@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -14,14 +13,13 @@
         <!--Achievements-->
         <scene sceneID="ZqG-mg-UWm">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9m5-GO-6H7" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="AchievementsListViewController" id="WiC-0j-oka" customClass="AchievementsViewController" customModule="CollectorReborn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dSf-AQ-vX9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="45S-kG-7RL">
-                                <rect key="frame" x="0.0" y="148" width="414" height="714"/>
+                                <rect key="frame" x="0.0" y="124" width="600" height="476"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -45,16 +43,16 @@
                     <navigationItem key="navigationItem" title="Achievements" largeTitleDisplayMode="always" id="qn9-3s-Gus"/>
                     <connections>
                         <outlet property="tableView" destination="45S-kG-7RL" id="I76-bi-Keb"/>
-                        <segue destination="Xpq-mA-jZ6" kind="show" id="B67-3f-OnV"/>
+                        <segue destination="Xpq-mA-jZ6" kind="show" identifier="categorySegue" id="B67-3f-OnV"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9m5-GO-6H7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1065.217391304348" y="-476.11607142857139"/>
         </scene>
         <!--Achievements Navigation Controller-->
         <scene sceneID="6e3-Op-rWL">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="250-ML-Kxt" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="AchievementNavigationController" title="Achievements Navigation Controller" automaticallyAdjustsScrollViewInsets="NO" id="gq6-Yc-Jw4" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item 1" id="eRs-Tq-ga6"/>
                     <toolbarItems/>
@@ -77,20 +75,20 @@
                         <segue destination="WiC-0j-oka" kind="relationship" relationship="rootViewController" id="8YQ-y9-FQd"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="250-ML-Kxt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1899" y="-476"/>
         </scene>
         <!--Section-->
         <scene sceneID="QTV-9A-lE9">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mog-D0-3Nb" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="AchievementListViewController" id="Byd-61-Y82" customClass="AchievementListViewController" customModule="CollectorReborn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3E9-eC-Y23">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="N5n-ki-XjC">
-                                <rect key="frame" x="0.0" y="148" width="414" height="714"/>
+                                <rect key="frame" x="0.0" y="124" width="600" height="476"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -116,20 +114,20 @@
                         <outlet property="tableView" destination="N5n-ki-XjC" id="YVl-DP-oe3"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mog-D0-3Nb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="464" y="-476"/>
         </scene>
         <!--Category-->
         <scene sceneID="c5I-2y-5KJ">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="r6r-OH-w68" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="AchievementsCategoryViewController" id="Xpq-mA-jZ6" customClass="AchievementsCategoryViewController" customModule="CollectorReborn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eMA-hA-nBS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="x4T-9z-Yth">
-                                <rect key="frame" x="0.0" y="148" width="414" height="714"/>
+                                <rect key="frame" x="0.0" y="124" width="600" height="476"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -153,9 +151,10 @@
                     <navigationItem key="navigationItem" title="Category" largeTitleDisplayMode="always" id="HPI-y1-diV"/>
                     <connections>
                         <outlet property="tableView" destination="x4T-9z-Yth" id="3uy-gR-4IZ"/>
-                        <segue destination="Byd-61-Y82" kind="show" id="hwn-9i-9aQ"/>
+                        <segue destination="Byd-61-Y82" kind="show" identifier="sectionSegue" id="hwn-9i-9aQ"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r6r-OH-w68" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-313" y="-476"/>
         </scene>

@@ -17,7 +17,7 @@ class TTCardsDetailViewController: UIViewController {
     var card: TTCards?
     
     override func viewDidLoad() {
-        print(card)
+//        print(card)
         navigationItem.title = card?.name
         cardImageView.setImageFromURL(string: card?.image)
     }
