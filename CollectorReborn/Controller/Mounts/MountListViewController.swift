@@ -53,6 +53,7 @@ class MountListViewController: UIViewController {
                 self?.hideLoading()
                 return
             }
+            
             CacheService.saveData(type: data, key: CacheService.CacheKey.mounts)
             strongSelf.mounts = mounts
             

@@ -55,6 +55,7 @@ class MinionListViewController: UIViewController {
                 self?.hideLoading()
                 return
             }
+            
             CacheService.saveData(type: data, key: CacheService.CacheKey.minions)
             strongSelf.minions = minions
             

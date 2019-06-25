@@ -55,6 +55,7 @@ class TTCardsViewController: UIViewController {
                 self?.hideLoading()
                 return
             }
+            
             CacheService.saveData(type: data, key: CacheService.CacheKey.tripleTriad)
             strongSelf.cards = cards
             

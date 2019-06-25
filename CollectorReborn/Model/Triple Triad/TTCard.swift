@@ -22,9 +22,9 @@ struct TTCard: Codable {
     
 }
 
-struct TTCards: Codable {
+struct TTCards: Codable, Comparable {
     
-    let id: Int?
+    let id: Int
     let sortId: Int?
     let name: String?
     let description: String?
@@ -54,7 +54,7 @@ struct TTCards: Codable {
         case sources = "sources"
     }
     
-    init(id: Int?, sortId: Int?, name: String?, description: String?, stars: Int?, patch: String?, sellPrice: Int?, icon: String?, image: String?, stats: TTCardStats?, type: TTCardType?, owned: String?, sources: TTCardSources?) {
+    init(id: Int, sortId: Int?, name: String?, description: String?, stars: Int?, patch: String?, sellPrice: Int?, icon: String?, image: String?, stats: TTCardStats?, type: TTCardType?, owned: String?, sources: TTCardSources?) {
         self.id = id
         self.sortId = sortId
         self.name = name
@@ -68,6 +68,14 @@ struct TTCards: Codable {
         self.type = type
         self.owned = owned
         self.sources = sources
+    }
+    
+    static func < (lhs: TTCards, rhs: TTCards) -> Bool {
+        return lhs.id < rhs.id
+    }
+    
+    static func == (lhs: TTCards, rhs: TTCards) -> Bool {
+        return lhs.id == rhs.id
     }
     
 }

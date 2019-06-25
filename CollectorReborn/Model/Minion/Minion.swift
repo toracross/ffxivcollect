@@ -22,9 +22,9 @@ struct Minion: Codable {
     
 }
 
-struct Minions: Codable {
+struct Minions: Codable, Comparable {
     
-    let id: Int?
+    let id: Int
     let name: String?
     let description: String?
     let enhancedDescription: String?
@@ -38,6 +38,14 @@ struct Minions: Codable {
     let owned: String?
     let sources: [MinionSources]?
     let verminion: Verminion?
+    
+    static func < (lhs: Minions, rhs: Minions) -> Bool {
+        return lhs.id < rhs.id
+    }
+    
+    static func == (lhs: Minions, rhs: Minions) -> Bool {
+        return lhs.id == rhs.id
+    }
     
 }
 

@@ -64,7 +64,11 @@ class AchievementsCategoryViewController: UIViewController {
     private func fetchAchievementsFromServer() {
         showLoading()
         FFXIVCollectService.shared.requestData(for: .achievements(category: titleText, limit: limit)) { [weak self](data: Achievement?) in
-            guard let strongSelf = self, let achievement = data, let achievements = achievement.achievements else { return }
+            guard let strongSelf = self, let achievement = data, let achievements = achievement.achievements else {
+                self?.hideLoading()
+                return
+            }
+            
             CacheService.saveData(type: achievement, key: strongSelf.titleText)
             strongSelf.achievements = achievements
             strongSelf.categories = achievements.map({ $0.category.name }).removingDuplicates()

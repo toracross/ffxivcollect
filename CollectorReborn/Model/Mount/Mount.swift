@@ -22,9 +22,9 @@ struct Mount: Codable {
     
 }
 
-struct Mounts: Codable {
+struct Mounts: Codable, Comparable {
     
-    let id: Int?
+    let id: Int
     let name: String?
     let description: String?
     let enhancedDescription: String?
@@ -58,8 +58,7 @@ struct Mounts: Codable {
         case sources = "sources"
     }
     
-    
-    init(id: Int?, name: String?, description: String?, enhancedDescription: String?, tooltip: String?, flying: Bool?, movement: String?, seats: Int?, order: Int?, patch: String?, itemId: Int?, owned: String?, image: String?, icon: String?, sources: [MountSource]) {
+    init(id: Int, name: String?, description: String?, enhancedDescription: String?, tooltip: String?, flying: Bool?, movement: String?, seats: Int?, order: Int?, patch: String?, itemId: Int?, owned: String?, image: String?, icon: String?, sources: [MountSource]) {
         self.id = id
         self.name = name
         self.description = description
@@ -75,6 +74,14 @@ struct Mounts: Codable {
         self.image = image
         self.icon = icon
         self.sources = sources
+    }
+    
+    static func < (lhs: Mounts, rhs: Mounts) -> Bool {
+        return lhs.id < rhs.id
+    }
+    
+    static func == (lhs: Mounts, rhs: Mounts) -> Bool {
+        return lhs.id == rhs.id
     }
     
 }
