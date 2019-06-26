@@ -56,6 +56,8 @@
 		95FEE27D22C2DF6700055B7A /* CacheViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FEE27C22C2DF6700055B7A /* CacheViewController.swift */; };
 		95FEE27F22C2E11F00055B7A /* CacheCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FEE27E22C2E11F00055B7A /* CacheCell.swift */; };
 		95FEE28122C2E1A000055B7A /* CacheCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95FEE28022C2E1A000055B7A /* CacheCell.xib */; };
+		95FEE28522C3054400055B7A /* CharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FEE28422C3054400055B7A /* CharacterViewController.swift */; };
+		95FEE28722C3062500055B7A /* UINavigationController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FEE28622C3062500055B7A /* UINavigationController+Extensions.swift */; };
 		E962496222C2AD5600DF63D6 /* Options.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E962496122C2AD5600DF63D6 /* Options.storyboard */; };
 		E962496422C2AD6400DF63D6 /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E962496322C2AD6400DF63D6 /* OptionsViewController.swift */; };
 		E962496A22C2ADC200DF63D6 /* OptionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E962496822C2ADC200DF63D6 /* OptionsCell.swift */; };
@@ -129,6 +131,8 @@
 		95FEE27C22C2DF6700055B7A /* CacheViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheViewController.swift; sourceTree = "<group>"; };
 		95FEE27E22C2E11F00055B7A /* CacheCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheCell.swift; sourceTree = "<group>"; };
 		95FEE28022C2E1A000055B7A /* CacheCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CacheCell.xib; sourceTree = "<group>"; };
+		95FEE28422C3054400055B7A /* CharacterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewController.swift; sourceTree = "<group>"; };
+		95FEE28622C3062500055B7A /* UINavigationController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extensions.swift"; sourceTree = "<group>"; };
 		AEEFAE104D1233C4546457B9 /* Pods_CollectorReborn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CollectorReborn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF3663F4782BFD817218FB40 /* Pods-CollectorReborn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CollectorReborn.release.xcconfig"; path = "Target Support Files/Pods-CollectorReborn/Pods-CollectorReborn.release.xcconfig"; sourceTree = "<group>"; };
 		E962496122C2AD5600DF63D6 /* Options.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Options.storyboard; sourceTree = "<group>"; };
@@ -153,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				E962496322C2AD6400DF63D6 /* OptionsViewController.swift */,
+				95FEE28422C3054400055B7A /* CharacterViewController.swift */,
 				95FEE27C22C2DF6700055B7A /* CacheViewController.swift */,
 			);
 			path = Options;
@@ -310,6 +315,7 @@
 				955FBBFA22C0719600B7DA3F /* UITableView+Extensions.swift */,
 				955FBBFC22C071BD00B7DA3F /* UICollectionView+Extensions.swift */,
 				95EFFC4822C1B55D00ED97F0 /* String+Extensions.swift */,
+				95FEE28622C3062500055B7A /* UINavigationController+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -568,9 +574,11 @@
 				95E24FFF22BFD45500CFA533 /* FFXIVTheme.swift in Sources */,
 				9509E33E22BFE0C1000C9F50 /* UITabBar+Extensions.swift in Sources */,
 				95E24FE222BF2E5700CFA533 /* MinionDetailViewController.swift in Sources */,
+				95FEE28722C3062500055B7A /* UINavigationController+Extensions.swift in Sources */,
 				95E24FD622BF28B000CFA533 /* TTPack.swift in Sources */,
 				955FBBF122C04D2600B7DA3F /* AchievementCell.swift in Sources */,
 				95EFFC5322C1BE8100ED97F0 /* CacheService.swift in Sources */,
+				95FEE28522C3054400055B7A /* CharacterViewController.swift in Sources */,
 				95E24FE722BFAA1F00CFA533 /* AchievementPointsCell.swift in Sources */,
 				95E24FC922BDD35600CFA533 /* MinionListViewController.swift in Sources */,
 				955FBBFB22C0719600B7DA3F /* UITableView+Extensions.swift in Sources */,

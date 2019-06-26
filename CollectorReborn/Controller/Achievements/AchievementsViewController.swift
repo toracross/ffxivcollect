@@ -66,7 +66,6 @@ class AchievementsViewController: UIViewController {
     // Functions
     private func setupUI() {
         registerCells()
-        setNavigationBar()
         tableView.reloadWithAnimation(withDuration: 0.25)
     }
     
@@ -78,10 +77,6 @@ class AchievementsViewController: UIViewController {
         tableView.register(tableHeaderCell, forCellReuseIdentifier: "TableHeaderCell")
         tableView.register(achievementPointsCell, forCellReuseIdentifier: "AchievementPointsCell")
         tableView.register(achievementCategoryCell, forCellReuseIdentifier: "AchievementCategoryCell")
-    }
-    
-    private func setNavigationBar() {
-        navigationController?.navigationBar.shadowImage = FFXIVTheme.windowImage
     }
 }
 
