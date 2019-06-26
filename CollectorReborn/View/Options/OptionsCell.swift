@@ -21,10 +21,5 @@ class OptionsCell: UITableViewCell {
     func setOptions(with option: OptionsViewController.Option) {
         optionImageView.image = UIImage(named: option.image)
         optionsLabel.text = option.title
-        
-        if option.title != "Cache" {
-            optionsLabel.text = "\(option.title) - NYI"
-        }
-        
     }
 }

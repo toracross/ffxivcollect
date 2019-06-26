@@ -42,7 +42,7 @@ class OptionsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     // Variables
-    private var rows: [Option] = []
+    private var options: [Option] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,7 +66,7 @@ class OptionsViewController: UIViewController {
     }
     
     private func setDataSource() {
-        rows.append(contentsOf: [Option.character, Option.ui, Option.audio, Option.cache, Option.logout])
+        options.append(contentsOf: [Option.character, Option.ui, Option.audio, Option.cache, Option.logout])
         tableView.reloadData()
     }
 
@@ -74,27 +74,23 @@ class OptionsViewController: UIViewController {
 
 extension OptionsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        presentMenu(for: rows[indexPath.row])
+        presentMenu(for: options[indexPath.row])
     }
     
-    private func presentMenu(for row: Option) {
+    private func presentMenu(for option: Option) {
         var viewController: UIViewController
         
-        switch row {
+        switch option {
         case .character:
-            viewController = storyboard?.instantiateViewController(withIdentifier: "CacheViewController") as! CacheViewController
-            break
+            viewController = storyboard?.instantiateViewController(withIdentifier: "CharacterViewController") as! CharacterViewController
         case .ui:
             viewController = storyboard?.instantiateViewController(withIdentifier: "CacheViewController") as! CacheViewController
-            break
         case .audio:
             viewController = storyboard?.instantiateViewController(withIdentifier: "CacheViewController") as! CacheViewController
-            break
         case .cache:
             viewController = storyboard?.instantiateViewController(withIdentifier: "CacheViewController") as! CacheViewController
         case .logout:
             viewController = storyboard?.instantiateViewController(withIdentifier: "CacheViewController") as! CacheViewController
-            break
         }
         
         navigationController?.pushViewController(viewController, animated: true)
@@ -104,7 +100,7 @@ extension OptionsViewController: UITableViewDelegate {
 extension OptionsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return rows.count
+        return options.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -114,7 +110,7 @@ extension OptionsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "OptionsCell", for: indexPath) as? OptionsCell else { return UITableViewCell() }
         
-        cell.setOptions(with: rows[indexPath.row])
+        cell.setOptions(with: options[indexPath.row])
         
         return cell
     }

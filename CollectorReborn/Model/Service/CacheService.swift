@@ -11,6 +11,7 @@ import Foundation
 class CacheService {
     
     enum CacheKey {
+        static let character = "Character"
         static let mounts = "Mounts"
         static let minions = "Minions"
         static let tripleTriad = "Triple Triad"

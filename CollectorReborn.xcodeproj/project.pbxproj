@@ -58,6 +58,11 @@
 		95FEE28122C2E1A000055B7A /* CacheCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95FEE28022C2E1A000055B7A /* CacheCell.xib */; };
 		95FEE28522C3054400055B7A /* CharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FEE28422C3054400055B7A /* CharacterViewController.swift */; };
 		95FEE28722C3062500055B7A /* UINavigationController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FEE28622C3062500055B7A /* UINavigationController+Extensions.swift */; };
+		95FEE28A22C3125F00055B7A /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FEE28922C3125F00055B7A /* Character.swift */; };
+		95FEE28C22C3126500055B7A /* CharacterSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FEE28B22C3126500055B7A /* CharacterSearch.swift */; };
+		95FEE28E22C314BB00055B7A /* CharacterSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FEE28D22C314BB00055B7A /* CharacterSearchViewController.swift */; };
+		95FEE29222C315BF00055B7A /* CharacterSearchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95FEE29122C315BF00055B7A /* CharacterSearchCell.xib */; };
+		95FEE29422C315C900055B7A /* CharacterSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FEE29322C315C900055B7A /* CharacterSearchCell.swift */; };
 		E962496222C2AD5600DF63D6 /* Options.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E962496122C2AD5600DF63D6 /* Options.storyboard */; };
 		E962496422C2AD6400DF63D6 /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E962496322C2AD6400DF63D6 /* OptionsViewController.swift */; };
 		E962496A22C2ADC200DF63D6 /* OptionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E962496822C2ADC200DF63D6 /* OptionsCell.swift */; };
@@ -133,6 +138,11 @@
 		95FEE28022C2E1A000055B7A /* CacheCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CacheCell.xib; sourceTree = "<group>"; };
 		95FEE28422C3054400055B7A /* CharacterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewController.swift; sourceTree = "<group>"; };
 		95FEE28622C3062500055B7A /* UINavigationController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extensions.swift"; sourceTree = "<group>"; };
+		95FEE28922C3125F00055B7A /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		95FEE28B22C3126500055B7A /* CharacterSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterSearch.swift; sourceTree = "<group>"; };
+		95FEE28D22C314BB00055B7A /* CharacterSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterSearchViewController.swift; sourceTree = "<group>"; };
+		95FEE29122C315BF00055B7A /* CharacterSearchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterSearchCell.xib; sourceTree = "<group>"; };
+		95FEE29322C315C900055B7A /* CharacterSearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterSearchCell.swift; sourceTree = "<group>"; };
 		AEEFAE104D1233C4546457B9 /* Pods_CollectorReborn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CollectorReborn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF3663F4782BFD817218FB40 /* Pods-CollectorReborn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CollectorReborn.release.xcconfig"; path = "Target Support Files/Pods-CollectorReborn/Pods-CollectorReborn.release.xcconfig"; sourceTree = "<group>"; };
 		E962496122C2AD5600DF63D6 /* Options.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Options.storyboard; sourceTree = "<group>"; };
@@ -158,6 +168,7 @@
 			children = (
 				E962496322C2AD6400DF63D6 /* OptionsViewController.swift */,
 				95FEE28422C3054400055B7A /* CharacterViewController.swift */,
+				95FEE28D22C314BB00055B7A /* CharacterSearchViewController.swift */,
 				95FEE27C22C2DF6700055B7A /* CacheViewController.swift */,
 			);
 			path = Options;
@@ -170,6 +181,8 @@
 				E962496922C2ADC200DF63D6 /* OptionsCell.xib */,
 				95FEE27E22C2E11F00055B7A /* CacheCell.swift */,
 				95FEE28022C2E1A000055B7A /* CacheCell.xib */,
+				95FEE29322C315C900055B7A /* CharacterSearchCell.swift */,
+				95FEE29122C315BF00055B7A /* CharacterSearchCell.xib */,
 			);
 			path = Options;
 			sourceTree = "<group>";
@@ -237,6 +250,7 @@
 			isa = PBXGroup;
 			children = (
 				95E24FA822BD2F1600CFA533 /* Service */,
+				95FEE28822C3125400055B7A /* Character */,
 				95E24FBD22BD6CE500CFA533 /* Achievement */,
 				95E24FAB22BD2FF400CFA533 /* Mount */,
 				95E24FCA22BDD3F700CFA533 /* Minion */,
@@ -410,6 +424,15 @@
 			path = Color;
 			sourceTree = "<group>";
 		};
+		95FEE28822C3125400055B7A /* Character */ = {
+			isa = PBXGroup;
+			children = (
+				95FEE28922C3125F00055B7A /* Character.swift */,
+				95FEE28B22C3126500055B7A /* CharacterSearch.swift */,
+			);
+			path = Character;
+			sourceTree = "<group>";
+		};
 		E2A609053DC64B49A53D023B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -488,6 +511,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95FEE29222C315BF00055B7A /* CharacterSearchCell.xib in Resources */,
 				9509E34622C02110000C9F50 /* AchievementPointsCell.xib in Resources */,
 				95E24FEA22BFB61F00CFA533 /* meiryo.ttc in Resources */,
 				95FEE28122C2E1A000055B7A /* CacheCell.xib in Resources */,
@@ -565,16 +589,20 @@
 				95EFFC4922C1B55D00ED97F0 /* String+Extensions.swift in Sources */,
 				95E24FF822BFD2D000CFA533 /* TableHeaderCell.swift in Sources */,
 				95E24FD122BEC1A700CFA533 /* CollectionViewCell.swift in Sources */,
+				95FEE28E22C314BB00055B7A /* CharacterSearchViewController.swift in Sources */,
 				95E24FDC22BF29C100CFA533 /* TTCardsViewController.swift in Sources */,
 				95E24FAD22BD2FFC00CFA533 /* Mount.swift in Sources */,
 				955FBBF722C0547400B7DA3F /* UIApplication+Extensions.swift in Sources */,
+				95FEE28A22C3125F00055B7A /* Character.swift in Sources */,
 				955FBBFD22C071BD00B7DA3F /* UICollectionView+Extensions.swift in Sources */,
 				95E24FCE22BDDC1B00CFA533 /* TabBarController.swift in Sources */,
 				9509E34422C00B8E000C9F50 /* Array+Extensions.swift in Sources */,
 				95E24FFF22BFD45500CFA533 /* FFXIVTheme.swift in Sources */,
+				95FEE29422C315C900055B7A /* CharacterSearchCell.swift in Sources */,
 				9509E33E22BFE0C1000C9F50 /* UITabBar+Extensions.swift in Sources */,
 				95E24FE222BF2E5700CFA533 /* MinionDetailViewController.swift in Sources */,
 				95FEE28722C3062500055B7A /* UINavigationController+Extensions.swift in Sources */,
+				95FEE28C22C3126500055B7A /* CharacterSearch.swift in Sources */,
 				95E24FD622BF28B000CFA533 /* TTPack.swift in Sources */,
 				955FBBF122C04D2600B7DA3F /* AchievementCell.swift in Sources */,
 				95EFFC5322C1BE8100ED97F0 /* CacheService.swift in Sources */,

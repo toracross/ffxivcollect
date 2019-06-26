@@ -10,12 +10,15 @@ import Foundation
 
 public let APICollectURL = "https://collect.raelys.com/api/"
 public let APITriadURL = "https://triad.raelys.com/api/"
+public let XIVAPICharacterSearchURL = "https://xivapi.com/character/search/"
 
 final class FFXIVCollectService {
     
     enum RequestType {
         case achievement(name: String)
         case achievements(category: String, limit: Int)
+        case character(id: Int)
+        case characterSearch(name: String, server: String)
         case minion(name: String)
         case minions
         case mount(name: String)
@@ -37,6 +40,11 @@ final class FFXIVCollectService {
         case .achievements(let category, let limit):
             let newCategory = category.replacingOccurrences(of: "Grand Company", with: "Grand+Company")
             url = URL(string: "\(APICollectURL)achievements?limit=\(limit)&category_type_name_en_eq=\(newCategory)")
+        case .character(let id):
+            url = URL(string: "\(APICollectURL)characters/\(id)")
+        case .characterSearch(let name, let server):
+            let newName = name.replacingOccurrences(of: " ", with: "+")
+            url = URL(string: "\(XIVAPICharacterSearchURL)?name=\(newName)&server=\(server)")
         case .minion(let name):
             url = URL(string: "\(APICollectURL)minions?name_en_cont=\(name)")
         case .minions:

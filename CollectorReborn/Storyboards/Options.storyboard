@@ -9,6 +9,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="JupiterCondensedSCOsF.ttf">
+            <string>JupiterCondensedSC</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Options View Controller-->
         <scene sceneID="YVW-SS-dYL">
@@ -44,7 +49,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fk3-KX-O9m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1067" y="177"/>
+            <point key="canvasLocation" x="-1068" y="-556"/>
         </scene>
         <!--Title-->
         <scene sceneID="n6V-vg-KK4">
@@ -79,7 +84,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kYk-Tg-CzM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-222" y="177"/>
+            <point key="canvasLocation" x="-309" y="-556"/>
         </scene>
         <!--Options Navigation Controller-->
         <scene sceneID="2fW-mR-Hi5">
@@ -108,12 +113,220 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3hV-bA-vIH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1838" y="177"/>
+            <point key="canvasLocation" x="-1839" y="-556"/>
+        </scene>
+        <!--Options Navigation Controller-->
+        <scene sceneID="zcE-bq-3Pd">
+            <objects>
+                <navigationController storyboardIdentifier="CharacterSearchViewController" title="Options Navigation Controller" automaticallyAdjustsScrollViewInsets="NO" id="LUD-lS-Pkr" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item 1" id="3Tj-LP-B9h"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="YKb-Ca-sfa">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" name="backgroundColor"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="JupiterCondensedSC" family="Jupiter Condensed SCOsF" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <fontDescription key="fontDescription" name="JupiterCondensedSC" family="Jupiter Condensed SCOsF" pointSize="30"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="7Md-Ha-h52" kind="relationship" relationship="rootViewController" id="FGT-gX-Dww"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2NL-eP-ncn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1839" y="954"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="kXt-bL-jhC">
+            <objects>
+                <viewController id="7Md-Ha-h52" customClass="CharacterSearchViewController" customModule="CollectorReborn" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="x5a-wD-zU2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0p5-tc-aUo">
+                                <rect key="frame" x="0.0" y="140" width="414" height="722"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="Zfw-u6-q3R">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dPq-ee-Bgx">
+                                            <rect key="frame" x="20" y="119" width="374" height="1"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="1" id="AIr-MI-qMH"/>
+                                            </constraints>
+                                        </view>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="FUm-WF-QoP">
+                                            <rect key="frame" x="20" y="20" width="374" height="160"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vPN-lk-SLd">
+                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="TQl-1E-ZNb"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="JupiterCondensedSC" family="Jupiter Condensed SCOsF" pointSize="20"/>
+                                                    <state key="normal" title="Server Select">
+                                                        <color key="titleColor" name="yellowText"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="serverSelectButtonPressed:" destination="7Md-Ha-h52" eventType="touchUpInside" id="fKb-gm-OjB"/>
+                                                    </connections>
+                                                </button>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Character Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EWC-Py-lO2">
+                                                    <rect key="frame" x="0.0" y="60" width="374" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="ACh-yA-R2b"/>
+                                                    </constraints>
+                                                    <color key="textColor" name="yellowText"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t2t-FC-KMM">
+                                                    <rect key="frame" x="0.0" y="120" width="374" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="lgV-Z3-hcQ"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="JupiterCondensedSC" family="Jupiter Condensed SCOsF" pointSize="20"/>
+                                                    <state key="normal" title="Search">
+                                                        <color key="titleColor" name="yellowText"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="searchButtonPressed:" destination="7Md-Ha-h52" eventType="touchUpInside" id="Y9p-bH-2KE"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstItem="dPq-ee-Bgx" firstAttribute="bottom" secondItem="EWC-Py-lO2" secondAttribute="bottom" id="IE6-ce-06e"/>
+                                        <constraint firstItem="FUm-WF-QoP" firstAttribute="top" secondItem="Zfw-u6-q3R" secondAttribute="top" constant="20" id="Odb-gr-HM7"/>
+                                        <constraint firstItem="FUm-WF-QoP" firstAttribute="leading" secondItem="Zfw-u6-q3R" secondAttribute="leading" constant="20" id="bcm-Uu-5t2"/>
+                                        <constraint firstAttribute="trailing" secondItem="FUm-WF-QoP" secondAttribute="trailing" constant="20" id="j9d-EM-dZb"/>
+                                        <constraint firstAttribute="bottom" secondItem="FUm-WF-QoP" secondAttribute="bottom" constant="20" id="jdS-9F-50Z"/>
+                                        <constraint firstItem="dPq-ee-Bgx" firstAttribute="leading" secondItem="EWC-Py-lO2" secondAttribute="leading" id="kDO-Na-OqZ"/>
+                                        <constraint firstItem="dPq-ee-Bgx" firstAttribute="trailing" secondItem="EWC-Py-lO2" secondAttribute="trailing" id="kZ0-v2-BW5"/>
+                                    </constraints>
+                                </view>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="Ael-I6-q55">
+                                    <rect key="frame" x="0.0" y="200" width="414" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </view>
+                                <connections>
+                                    <outlet property="dataSource" destination="7Md-Ha-h52" id="i5v-zH-YFN"/>
+                                    <outlet property="delegate" destination="7Md-Ha-h52" id="572-6j-u6f"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" name="backgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="V9e-h2-hep" firstAttribute="trailing" secondItem="0p5-tc-aUo" secondAttribute="trailing" id="HNG-if-QV1"/>
+                            <constraint firstItem="V9e-h2-hep" firstAttribute="bottom" secondItem="0p5-tc-aUo" secondAttribute="bottom" id="TRn-rS-bjH"/>
+                            <constraint firstItem="0p5-tc-aUo" firstAttribute="leading" secondItem="V9e-h2-hep" secondAttribute="leading" id="eTX-AL-Bbh"/>
+                            <constraint firstItem="0p5-tc-aUo" firstAttribute="top" secondItem="V9e-h2-hep" secondAttribute="top" id="z0d-rm-QIK"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="V9e-h2-hep"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="rr3-fX-R4d">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="IEf-gp-Yic">
+                            <connections>
+                                <action selector="cancelButtonPressed:" destination="7Md-Ha-h52" id="qWT-gg-y3o"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="serverButton" destination="vPN-lk-SLd" id="WuQ-li-x3H"/>
+                        <outlet property="tableView" destination="0p5-tc-aUo" id="tl9-07-nSR"/>
+                        <outlet property="textField" destination="EWC-Py-lO2" id="PDC-6U-xsb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tfq-Lb-DbG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1068.1159420289855" y="953.57142857142856"/>
+        </scene>
+        <!--Options Navigation Controller-->
+        <scene sceneID="TOX-2t-alN">
+            <objects>
+                <navigationController storyboardIdentifier="CharacterNavigationController" title="Options Navigation Controller" automaticallyAdjustsScrollViewInsets="NO" id="AqR-be-fJZ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item 1" id="B3M-Hi-PtZ"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="TCA-gu-lAO">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" name="backgroundColor"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="JupiterCondensedSC" family="Jupiter Condensed SCOsF" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <fontDescription key="fontDescription" name="JupiterCondensedSC" family="Jupiter Condensed SCOsF" pointSize="30"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="zaR-0R-yuw" kind="relationship" relationship="rootViewController" id="hkl-ZR-2Fl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y1f-S9-Jf8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1839" y="167"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="uhq-mj-XYO">
+            <objects>
+                <viewController storyboardIdentifier="CharacterViewController" id="zaR-0R-yuw" customClass="CharacterViewController" customModule="CollectorReborn" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hKh-vI-jmg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NxQ-zk-gIh">
+                                <rect key="frame" x="0.0" y="140" width="414" height="722"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" name="backgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="NxQ-zk-gIh" firstAttribute="top" secondItem="hq3-59-ecz" secondAttribute="top" id="EhA-UT-qnU"/>
+                            <constraint firstItem="hq3-59-ecz" firstAttribute="bottom" secondItem="NxQ-zk-gIh" secondAttribute="bottom" id="FLm-oe-1yY"/>
+                            <constraint firstItem="hq3-59-ecz" firstAttribute="trailing" secondItem="NxQ-zk-gIh" secondAttribute="trailing" id="bmZ-tE-Ypy"/>
+                            <constraint firstItem="NxQ-zk-gIh" firstAttribute="leading" secondItem="hq3-59-ecz" secondAttribute="leading" id="fhJ-DE-nrV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hq3-59-ecz"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="nsf-Gb-0aO">
+                        <barButtonItem key="rightBarButtonItem" title="Search" id="XYh-AS-vjh">
+                            <connections>
+                                <action selector="searchButtonPressed:" destination="zaR-0R-yuw" id="bkx-gY-XxD"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="characterImageView" destination="NxQ-zk-gIh" id="Xgj-XY-TBF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8XE-B4-Tac" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1068" y="167"/>
         </scene>
     </scenes>
     <resources>
         <namedColor name="backgroundColor">
             <color red="0.19599999487400055" green="0.19599999487400055" blue="0.19599999487400055" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="yellowText">
+            <color red="0.93725490196078431" green="0.8901960784313725" blue="0.82352941176470584" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
