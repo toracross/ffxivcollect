@@ -10,12 +10,12 @@ import Foundation
 
 struct Character: Codable {
     
-    let id: Int
-    let name: String
-    let server: String
-    let portrait: String
-    let avatar: String
-    let verified: Bool
+    let id: Int?
+    let name: String?
+    let server: String?
+    let portrait: String?
+    let avatar: String?
+    let verified: Bool?
     let achievements: CharacterAchievements?
     let mounts: CharacterMounts?
     let minions: CharacterMinions?

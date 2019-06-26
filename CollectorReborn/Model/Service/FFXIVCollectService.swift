@@ -8,6 +8,7 @@
 
 import Foundation
 
+public let XIVServerListURL = "https://xivapi.com/servers"
 public let APICollectURL = "https://collect.raelys.com/api/"
 public let APITriadURL = "https://triad.raelys.com/api/"
 public let XIVAPICharacterSearchURL = "https://xivapi.com/character/search/"
@@ -23,6 +24,7 @@ final class FFXIVCollectService {
         case minions
         case mount(name: String)
         case mounts
+        case servers
         case tripleTriadCard(name: String)
         case tripleTriadCards
         case tripleTriadCardPack(name: String)
@@ -53,6 +55,8 @@ final class FFXIVCollectService {
             url = URL(string: "\(APICollectURL)mounts?name_en_cont=\(name)")
         case .mounts:
             url = URL(string: "\(APICollectURL)mounts?limit=9000")
+        case .servers:
+            url = URL(string: XIVServerListURL)
         case .tripleTriadCard(let name):
             url = URL(string: "\(APITriadURL)cards?name_en_cont=\(name)")
         case .tripleTriadCards:
@@ -82,10 +86,31 @@ final class FFXIVCollectService {
                 let json = try JSONDecoder().decode(T.self, from: data)
                 completed(json)
             } catch let error {
+                completed(nil)
                 print(error)
             }
             
         }.resume()
     }
     
+}
+
+extension FFXIVCollectService {
+    class func fetchServers(with url: URL, completed: @escaping ([String]) -> ()) {
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            guard error == nil, let data = data else {
+                completed([])
+                return
+            }
+            
+            do {
+                let json = try JSONDecoder().decode([String].self, from: data)
+                completed(json)
+            } catch let error {
+                completed([])
+                print(error)
+            }
+            
+        }.resume()
+    }
 }

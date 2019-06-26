@@ -188,8 +188,8 @@
                                                         <constraint firstAttribute="height" constant="40" id="ACh-yA-R2b"/>
                                                     </constraints>
                                                     <color key="textColor" name="yellowText"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <fontDescription key="fontDescription" name="JupiterCondensedSC" family="Jupiter Condensed SCOsF" pointSize="20"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert" returnKeyType="done" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                                 </textField>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t2t-FC-KMM">
                                                     <rect key="frame" x="0.0" y="120" width="374" height="40"/>

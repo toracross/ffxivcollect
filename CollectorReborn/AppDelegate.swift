@@ -16,7 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "Jupiter Condensed SCOsF", size: 18)!], for: .normal)
+        setNavigationTheme()
+        fetchServerList()
+        
         return true
     }
 
@@ -45,3 +47,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+extension AppDelegate {
+    
+    private func setNavigationTheme() {
+        UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "Jupiter Condensed SCOsF", size: 18)!], for: .normal)
+    }
+    
+    private func fetchServerList() {
+        if let _: [String] = CacheService.loadData(key: CacheService.CacheKey.servers) {
+            //we have cache data, do nothing.
+        } else {
+            FFXIVCollectService.fetchServers(with: URL(string: XIVServerListURL)!) { (serverList) in
+                CacheService.saveData(type: serverList, key: CacheService.CacheKey.servers)
+            }
+        }
+        
+    }
+    
+}

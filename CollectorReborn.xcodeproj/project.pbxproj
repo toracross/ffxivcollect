@@ -53,6 +53,7 @@
 		95E24FFF22BFD45500CFA533 /* FFXIVTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E24FFE22BFD45500CFA533 /* FFXIVTheme.swift */; };
 		95EFFC4922C1B55D00ED97F0 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EFFC4822C1B55D00ED97F0 /* String+Extensions.swift */; };
 		95EFFC5322C1BE8100ED97F0 /* CacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EFFC5222C1BE8100ED97F0 /* CacheService.swift */; };
+		95F9CDBE22C3E991003567CC /* Servers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F9CDBD22C3E991003567CC /* Servers.swift */; };
 		95FEE27D22C2DF6700055B7A /* CacheViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FEE27C22C2DF6700055B7A /* CacheViewController.swift */; };
 		95FEE27F22C2E11F00055B7A /* CacheCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FEE27E22C2E11F00055B7A /* CacheCell.swift */; };
 		95FEE28122C2E1A000055B7A /* CacheCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95FEE28022C2E1A000055B7A /* CacheCell.xib */; };
@@ -133,6 +134,7 @@
 		95E24FFE22BFD45500CFA533 /* FFXIVTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFXIVTheme.swift; sourceTree = "<group>"; };
 		95EFFC4822C1B55D00ED97F0 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		95EFFC5222C1BE8100ED97F0 /* CacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheService.swift; sourceTree = "<group>"; };
+		95F9CDBD22C3E991003567CC /* Servers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Servers.swift; sourceTree = "<group>"; };
 		95FEE27C22C2DF6700055B7A /* CacheViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheViewController.swift; sourceTree = "<group>"; };
 		95FEE27E22C2E11F00055B7A /* CacheCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheCell.swift; sourceTree = "<group>"; };
 		95FEE28022C2E1A000055B7A /* CacheCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CacheCell.xib; sourceTree = "<group>"; };
@@ -251,6 +253,7 @@
 			children = (
 				95E24FA822BD2F1600CFA533 /* Service */,
 				95FEE28822C3125400055B7A /* Character */,
+				95F9CDBC22C3E987003567CC /* Servers */,
 				95E24FBD22BD6CE500CFA533 /* Achievement */,
 				95E24FAB22BD2FF400CFA533 /* Mount */,
 				95E24FCA22BDD3F700CFA533 /* Minion */,
@@ -422,6 +425,14 @@
 				95E24FFE22BFD45500CFA533 /* FFXIVTheme.swift */,
 			);
 			path = Color;
+			sourceTree = "<group>";
+		};
+		95F9CDBC22C3E987003567CC /* Servers */ = {
+			isa = PBXGroup;
+			children = (
+				95F9CDBD22C3E991003567CC /* Servers.swift */,
+			);
+			path = Servers;
 			sourceTree = "<group>";
 		};
 		95FEE28822C3125400055B7A /* Character */ = {
@@ -611,6 +622,7 @@
 				95E24FC922BDD35600CFA533 /* MinionListViewController.swift in Sources */,
 				955FBBFB22C0719600B7DA3F /* UITableView+Extensions.swift in Sources */,
 				95E24FAA22BD2F2100CFA533 /* FFXIVCollectService.swift in Sources */,
+				95F9CDBE22C3E991003567CC /* Servers.swift in Sources */,
 				9509E34022BFE97C000C9F50 /* UIView+Extensions.swift in Sources */,
 				95E24FB322BD380B00CFA533 /* MountDetailsViewController.swift in Sources */,
 				9509E34222BFEE4E000C9F50 /* AchievementCategoryCell.swift in Sources */,

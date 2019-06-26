@@ -34,6 +34,7 @@ class CharacterSearchViewController: UIViewController {
     @IBAction private func searchButtonPressed(_ sender: UIButton) {
         guard let name = textField.text, let server = serverButton.title(for: .normal) else { return }
         
+        textField.endEditing(true)
         showLoading()
         FFXIVCollectService.shared.requestData(for: .characterSearch(name: name, server: server)) { [weak self] (results: CharacterSearch?) in
             guard let strongSelf = self, let characters = results?.results else {
@@ -85,7 +86,12 @@ class CharacterSearchViewController: UIViewController {
     private func setupPicker() {
         pickerView.delegate = self
         pickerView.dataSource = self
-        servers = ["Aegis", "Alexander", "Anima", "Asura", "Atomos", "Bahamut", "Balmung", "Behemoth", "Belias", "Brynhildr", "Cactuar", "Carbuncle", "Cerberus", "Chocobo", "Coeurl", "Diabolos", "Durandal", "Excalibur", "Exodus", "Faerie", "Famfrit", "Fenrir", "Garuda", "Gilgamesh", "Goblin", "Gungnir", "Hades", "Hyperion", "Ifrit", "Ixion", "Jenova", "Kujata", "Lamia", "Leviathan", "Lich", "Louisoix", "Malboro", "Mandragora", "Masamune", "Mateus", "Midgardsormr", "Moogle", "Odin", "Omega", "Pandaemonium", "Phoenix", "Ragnarok", "Ramuh", "Ridill", "Sargatanas", "Shinryu", "Shiva", "Siren", "Spriggan", " Tiamat", "Titan", "Tonberry", "Twintania", "Typhon", "Ultima", "Ultros", "Unicorn", "Valefor", "Yojimbo", "Zalera", "Zeromus", "Zodiark"]
+        
+        if let serverList: [String] = CacheService.loadData(key: CacheService.CacheKey.servers) {
+            servers = serverList.sorted()
+        } else {
+            servers = CacheService.backupServerList
+        }
         
         pickerView.reloadAllComponents()
     }
@@ -107,6 +113,7 @@ extension CharacterSearchViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         showLoading()
         
+        print(characters[indexPath.row])
         FFXIVCollectService.shared.requestData(for: .character(id: characters[indexPath.row].id)) { [weak self] (results: Character?) in
             guard let strongSelf = self, let character = results else {
                 self?.hideLoading()
