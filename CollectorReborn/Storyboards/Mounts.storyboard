@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Mount List View Controller-->
+        <!--Title-->
         <scene sceneID="h2K-bb-v4c">
             <objects>
                 <viewController id="1vh-3Z-5sd" customClass="MountListViewController" customModule="CollectorReborn" customModuleProvider="target" sceneMemberID="viewController">
@@ -67,7 +67,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Il1-GP-hfN"/>
                     </view>
-                    <navigationItem key="navigationItem" id="HGL-cs-gFp"/>
+                    <navigationItem key="navigationItem" title="Title" id="UQC-fA-4QB"/>
                     <connections>
                         <outlet property="collectionView" destination="Ezs-pc-cRN" id="yAQ-mn-boO"/>
                         <segue destination="u2T-lD-BgI" kind="show" identifier="mountSegue" id="8st-DB-SQx"/>
@@ -77,7 +77,7 @@
             </objects>
             <point key="canvasLocation" x="-988.40579710144937" y="176.78571428571428"/>
         </scene>
-        <!--Mount Details View Controller-->
+        <!--Title-->
         <scene sceneID="iyn-rm-BAP">
             <objects>
                 <viewController storyboardIdentifier="MountDetailsViewController" id="u2T-lD-BgI" customClass="MountDetailsViewController" customModule="CollectorReborn" customModuleProvider="target" sceneMemberID="viewController">
@@ -98,6 +98,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bfm-Mw-gLf"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="2kN-9p-BYc"/>
                     <connections>
                         <outlet property="mountImageView" destination="NjO-c9-ODh" id="mdG-xu-wRp"/>
                     </connections>

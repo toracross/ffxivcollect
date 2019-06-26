@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Minion List View Controller-->
+        <!--Title-->
         <scene sceneID="o3s-o5-GcM">
             <objects>
                 <viewController id="2RL-IG-tUD" customClass="MinionListViewController" customModule="CollectorReborn" customModuleProvider="target" sceneMemberID="viewController">
@@ -67,7 +67,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Vlj-Lk-Eij"/>
                     </view>
-                    <navigationItem key="navigationItem" id="dOS-d1-jeJ"/>
+                    <navigationItem key="navigationItem" title="Title" id="IUj-R4-Y0r"/>
                     <connections>
                         <outlet property="collectionView" destination="fIE-zL-ao4" id="b9v-eW-fp2"/>
                         <segue destination="N6C-7E-NDz" kind="show" identifier="minionSegue" id="ehd-mM-EEL"/>
@@ -77,7 +77,7 @@
             </objects>
             <point key="canvasLocation" x="984.05797101449286" y="61.607142857142854"/>
         </scene>
-        <!--Minion Detail View Controller-->
+        <!--Title-->
         <scene sceneID="ddn-rz-F4O">
             <objects>
                 <viewController storyboardIdentifier="MinionDetailViewController" id="N6C-7E-NDz" customClass="MinionDetailViewController" customModule="CollectorReborn" customModuleProvider="target" sceneMemberID="viewController">
@@ -98,6 +98,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vQX-OM-MRE"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="yrM-QL-FW6"/>
                     <connections>
                         <outlet property="minionImageView" destination="7Rj-Dc-kr9" id="o2s-f4-aes"/>
                     </connections>

@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Cards View Controller-->
+        <!--Title-->
         <scene sceneID="Fkn-Ua-LmY">
             <objects>
                 <viewController id="xoF-N7-DHL" customClass="TTCardsViewController" customModule="CollectorReborn" customModuleProvider="target" sceneMemberID="viewController">
@@ -67,7 +67,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="BY5-pf-vWh"/>
                     </view>
-                    <navigationItem key="navigationItem" id="46Z-Jh-FkH"/>
+                    <navigationItem key="navigationItem" title="Title" id="vDb-do-BIN"/>
                     <connections>
                         <outlet property="collectionView" destination="NTo-iE-XDc" id="w84-dh-eNB"/>
                         <segue destination="sB8-un-sPO" kind="show" identifier="triadSegue" id="dOJ-W2-JO1"/>
@@ -77,7 +77,7 @@
             </objects>
             <point key="canvasLocation" x="-988.40579710144937" y="176.78571428571428"/>
         </scene>
-        <!--Cards Detail View Controller-->
+        <!--Title-->
         <scene sceneID="3DK-qs-DaJ">
             <objects>
                 <viewController storyboardIdentifier="TTCardsDetailViewController" id="sB8-un-sPO" customClass="TTCardsDetailViewController" customModule="CollectorReborn" customModuleProvider="target" sceneMemberID="viewController">
@@ -98,6 +98,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Qbv-c3-b0k"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="17i-H5-Lbl"/>
                     <connections>
                         <outlet property="cardImageView" destination="RHo-zH-Jcj" id="FA9-SU-yfd"/>
                     </connections>

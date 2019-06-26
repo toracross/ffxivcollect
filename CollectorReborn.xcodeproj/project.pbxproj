@@ -53,6 +53,9 @@
 		95E24FFF22BFD45500CFA533 /* FFXIVTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E24FFE22BFD45500CFA533 /* FFXIVTheme.swift */; };
 		95EFFC4922C1B55D00ED97F0 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EFFC4822C1B55D00ED97F0 /* String+Extensions.swift */; };
 		95EFFC5322C1BE8100ED97F0 /* CacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EFFC5222C1BE8100ED97F0 /* CacheService.swift */; };
+		95FEE27D22C2DF6700055B7A /* CacheViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FEE27C22C2DF6700055B7A /* CacheViewController.swift */; };
+		95FEE27F22C2E11F00055B7A /* CacheCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FEE27E22C2E11F00055B7A /* CacheCell.swift */; };
+		95FEE28122C2E1A000055B7A /* CacheCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95FEE28022C2E1A000055B7A /* CacheCell.xib */; };
 		E962496222C2AD5600DF63D6 /* Options.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E962496122C2AD5600DF63D6 /* Options.storyboard */; };
 		E962496422C2AD6400DF63D6 /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E962496322C2AD6400DF63D6 /* OptionsViewController.swift */; };
 		E962496A22C2ADC200DF63D6 /* OptionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E962496822C2ADC200DF63D6 /* OptionsCell.swift */; };
@@ -123,12 +126,15 @@
 		95E24FFE22BFD45500CFA533 /* FFXIVTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFXIVTheme.swift; sourceTree = "<group>"; };
 		95EFFC4822C1B55D00ED97F0 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		95EFFC5222C1BE8100ED97F0 /* CacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheService.swift; sourceTree = "<group>"; };
+		95FEE27C22C2DF6700055B7A /* CacheViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheViewController.swift; sourceTree = "<group>"; };
+		95FEE27E22C2E11F00055B7A /* CacheCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheCell.swift; sourceTree = "<group>"; };
+		95FEE28022C2E1A000055B7A /* CacheCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CacheCell.xib; sourceTree = "<group>"; };
 		AEEFAE104D1233C4546457B9 /* Pods_CollectorReborn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CollectorReborn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF3663F4782BFD817218FB40 /* Pods-CollectorReborn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CollectorReborn.release.xcconfig"; path = "Target Support Files/Pods-CollectorReborn/Pods-CollectorReborn.release.xcconfig"; sourceTree = "<group>"; };
 		E962496122C2AD5600DF63D6 /* Options.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Options.storyboard; sourceTree = "<group>"; };
-		E962496322C2AD6400DF63D6 /* OptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OptionsViewController.swift; path = TripleTriad/OptionsViewController.swift; sourceTree = "<group>"; };
-		E962496822C2ADC200DF63D6 /* OptionsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OptionsCell.swift; path = Achievements/OptionsCell.swift; sourceTree = "<group>"; };
-		E962496922C2ADC200DF63D6 /* OptionsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = OptionsCell.xib; path = Achievements/OptionsCell.xib; sourceTree = "<group>"; };
+		E962496322C2AD6400DF63D6 /* OptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
+		E962496822C2ADC200DF63D6 /* OptionsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsCell.swift; sourceTree = "<group>"; };
+		E962496922C2ADC200DF63D6 /* OptionsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OptionsCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +149,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		954F518822C2DAF200BCDABF /* Options */ = {
+			isa = PBXGroup;
+			children = (
+				E962496322C2AD6400DF63D6 /* OptionsViewController.swift */,
+				95FEE27C22C2DF6700055B7A /* CacheViewController.swift */,
+			);
+			path = Options;
+			sourceTree = "<group>";
+		};
+		954F518922C2DAFD00BCDABF /* Options */ = {
+			isa = PBXGroup;
+			children = (
+				E962496822C2ADC200DF63D6 /* OptionsCell.swift */,
+				E962496922C2ADC200DF63D6 /* OptionsCell.xib */,
+				95FEE27E22C2E11F00055B7A /* CacheCell.swift */,
+				95FEE28022C2E1A000055B7A /* CacheCell.xib */,
+			);
+			path = Options;
+			sourceTree = "<group>";
+		};
 		95E24F8122BD2DE600CFA533 = {
 			isa = PBXGroup;
 			children = (
@@ -182,11 +208,11 @@
 			isa = PBXGroup;
 			children = (
 				95E24FCD22BDDC1B00CFA533 /* TabBarController.swift */,
-				E962496322C2AD6400DF63D6 /* OptionsViewController.swift */,
 				95E24FB422BD5B9700CFA533 /* Achievements */,
 				95E24FB522BD5B9B00CFA533 /* Mounts */,
 				95E24FB622BD5B9F00CFA533 /* Minions */,
 				95E24FDA22BF299E00CFA533 /* TripleTriad */,
+				954F518822C2DAF200BCDABF /* Options */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -194,11 +220,10 @@
 		95E24FA022BD2E4300CFA533 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				E962496822C2ADC200DF63D6 /* OptionsCell.swift */,
-				E962496922C2ADC200DF63D6 /* OptionsCell.xib */,
 				95E24FF422BFD24100CFA533 /* UICollectionView */,
 				95E24FF322BFD23C00CFA533 /* UITableView */,
 				95E24FE522BFAA1300CFA533 /* Achievements */,
+				954F518922C2DAFD00BCDABF /* Options */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -459,6 +484,7 @@
 			files = (
 				9509E34622C02110000C9F50 /* AchievementPointsCell.xib in Resources */,
 				95E24FEA22BFB61F00CFA533 /* meiryo.ttc in Resources */,
+				95FEE28122C2E1A000055B7A /* CacheCell.xib in Resources */,
 				95E24FA522BD2E9B00CFA533 /* Main.storyboard in Resources */,
 				955FBBF322C04D2D00B7DA3F /* AchievementCell.xib in Resources */,
 				E962496B22C2ADC200DF63D6 /* OptionsCell.xib in Resources */,
@@ -558,8 +584,10 @@
 				95E24FE022BF2C1600CFA533 /* TTCardsDetailViewController.swift in Sources */,
 				9509E34B22C03096000C9F50 /* AchievementsCategoryViewController.swift in Sources */,
 				95E24FCC22BDD41100CFA533 /* Minion.swift in Sources */,
+				95FEE27F22C2E11F00055B7A /* CacheCell.swift in Sources */,
 				95E24FD422BF088500CFA533 /* TTCard.swift in Sources */,
 				95E24FC722BD719E00CFA533 /* Achievement.swift in Sources */,
+				95FEE27D22C2DF6700055B7A /* CacheViewController.swift in Sources */,
 				95E24FBC22BD6A3100CFA533 /* UIImageView+Extensions.swift in Sources */,
 				955FBBF522C04F3100B7DA3F /* AchievementListViewController.swift in Sources */,
 				95E24F8E22BD2DE600CFA533 /* AppDelegate.swift in Sources */,

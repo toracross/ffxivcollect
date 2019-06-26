@@ -18,39 +18,68 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="5Ip-E8-PVV">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xWy-gK-pYV">
                                 <rect key="frame" x="0.0" y="140" width="414" height="722"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="myd-Hm-YGf">
-                                    <size key="itemSize" width="50" height="50"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells/>
                                 <connections>
-                                    <outlet property="dataSource" destination="QkZ-no-Wco" id="QTi-7y-Lg1"/>
-                                    <outlet property="delegate" destination="QkZ-no-Wco" id="NgY-MX-d3k"/>
+                                    <outlet property="dataSource" destination="QkZ-no-Wco" id="w3P-2E-hKp"/>
+                                    <outlet property="delegate" destination="QkZ-no-Wco" id="Tdn-fW-JG2"/>
                                 </connections>
-                            </collectionView>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" name="backgroundColor"/>
                         <constraints>
-                            <constraint firstItem="pEq-Kg-sJ8" firstAttribute="bottom" secondItem="5Ip-E8-PVV" secondAttribute="bottom" id="Egj-Fg-CCo"/>
-                            <constraint firstItem="5Ip-E8-PVV" firstAttribute="leading" secondItem="pEq-Kg-sJ8" secondAttribute="leading" id="V07-X5-hZU"/>
-                            <constraint firstItem="5Ip-E8-PVV" firstAttribute="top" secondItem="pEq-Kg-sJ8" secondAttribute="top" id="nsG-in-xTv"/>
-                            <constraint firstItem="pEq-Kg-sJ8" firstAttribute="trailing" secondItem="5Ip-E8-PVV" secondAttribute="trailing" id="w9T-eR-cZX"/>
+                            <constraint firstItem="xWy-gK-pYV" firstAttribute="leading" secondItem="pEq-Kg-sJ8" secondAttribute="leading" id="7RB-8e-AHG"/>
+                            <constraint firstItem="pEq-Kg-sJ8" firstAttribute="trailing" secondItem="xWy-gK-pYV" secondAttribute="trailing" id="D6k-vl-Udv"/>
+                            <constraint firstItem="pEq-Kg-sJ8" firstAttribute="bottom" secondItem="xWy-gK-pYV" secondAttribute="bottom" id="TO3-Ve-laN"/>
+                            <constraint firstItem="xWy-gK-pYV" firstAttribute="top" secondItem="pEq-Kg-sJ8" secondAttribute="top" id="s3v-tI-EI7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pEq-Kg-sJ8"/>
                     </view>
                     <navigationItem key="navigationItem" id="PSZ-bL-dLT"/>
                     <connections>
-                        <outlet property="collectionView" destination="5Ip-E8-PVV" id="izU-iX-dLd"/>
+                        <outlet property="tableView" destination="xWy-gK-pYV" id="NOl-he-shd"/>
+                        <segue destination="S1c-2S-QEU" kind="show" identifier="optionsSegue" id="qvO-fH-yYX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fk3-KX-O9m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1067" y="177"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="n6V-vg-KK4">
+            <objects>
+                <viewController storyboardIdentifier="CacheViewController" id="S1c-2S-QEU" customClass="CacheViewController" customModule="CollectorReborn" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="T7g-6m-7hz">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Lld-QD-lEg">
+                                <rect key="frame" x="0.0" y="140" width="414" height="722"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="S1c-2S-QEU" id="rhy-JT-Kf7"/>
+                                    <outlet property="delegate" destination="S1c-2S-QEU" id="AyH-pd-fbe"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" name="backgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="CZ3-n5-7Z0" firstAttribute="trailing" secondItem="Lld-QD-lEg" secondAttribute="trailing" id="HDO-D5-gD8"/>
+                            <constraint firstItem="CZ3-n5-7Z0" firstAttribute="bottom" secondItem="Lld-QD-lEg" secondAttribute="bottom" id="I3U-SX-hip"/>
+                            <constraint firstItem="Lld-QD-lEg" firstAttribute="leading" secondItem="CZ3-n5-7Z0" secondAttribute="leading" id="Rxt-Gq-V2Q"/>
+                            <constraint firstItem="Lld-QD-lEg" firstAttribute="top" secondItem="CZ3-n5-7Z0" secondAttribute="top" id="zZE-7R-9H9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="CZ3-n5-7Z0"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="n58-mQ-GwT"/>
+                    <connections>
+                        <outlet property="tableView" destination="Lld-QD-lEg" id="fSa-PB-ziT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kYk-Tg-CzM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-222" y="177"/>
         </scene>
         <!--Options Navigation Controller-->
         <scene sceneID="2fW-mR-Hi5">

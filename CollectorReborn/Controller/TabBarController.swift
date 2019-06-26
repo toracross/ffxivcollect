@@ -39,7 +39,7 @@ class TabBarController: UITabBarController {
         
         let optionsStoryboard = UIStoryboard(name: "Options", bundle: Bundle.main)
         let optionsViewController = optionsStoryboard.instantiateViewController(withIdentifier: "OptionsViewController")
-        let optionsImage = UIImage(named: "ttcard1")?.withRenderingMode(.alwaysOriginal)
+        let optionsImage = UIImage(named: "ads")?.withRenderingMode(.alwaysOriginal)
         optionsViewController.tabBarItem = UITabBarItem(title: "Options", image: optionsImage, selectedImage: optionsImage)
         
         viewControllers = [achievementViewController, mountViewController, minionViewController, ttViewController, optionsViewController]
