@@ -43,6 +43,7 @@ class TTARViewController: UIViewController {
             Error.presentError(error: .arNotSupported) { (_) in
                 self.navigationController?.popViewController(animated: true)
             }
+            return
         }
         
         sceneView.session.run(configuration)
