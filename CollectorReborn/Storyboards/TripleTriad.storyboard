@@ -9,8 +9,13 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="JupiterCondensedSCOsF.ttf">
+            <string>JupiterCondensedSC</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--Title-->
+        <!--Triple Triad Card-->
         <scene sceneID="Fkn-Ua-LmY">
             <objects>
                 <viewController id="xoF-N7-DHL" customClass="TTCardsViewController" customModule="CollectorReborn" customModuleProvider="target" sceneMemberID="viewController">
@@ -67,7 +72,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="BY5-pf-vWh"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="vDb-do-BIN"/>
+                    <navigationItem key="navigationItem" title="Triple Triad Card" id="vDb-do-BIN"/>
                     <connections>
                         <outlet property="collectionView" destination="NTo-iE-XDc" id="w84-dh-eNB"/>
                         <segue destination="sB8-un-sPO" kind="show" identifier="triadSegue" id="dOJ-W2-JO1"/>
@@ -80,6 +85,7 @@
         <!--Title-->
         <scene sceneID="3DK-qs-DaJ">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qnc-nD-dgY" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="TTCardsDetailViewController" id="sB8-un-sPO" customClass="TTCardsDetailViewController" customModule="CollectorReborn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MON-ic-6o5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -98,19 +104,62 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Qbv-c3-b0k"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="17i-H5-Lbl"/>
+                    <navigationItem key="navigationItem" title="Title" id="17i-H5-Lbl">
+                        <barButtonItem key="rightBarButtonItem" id="aMI-oS-6Sa">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="XVt-v4-07K">
+                                <rect key="frame" x="302" y="4" width="92" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="JupiterCondensedSC" family="Jupiter Condensed SCOsF" pointSize="20"/>
+                                <state key="normal" title="AR"/>
+                                <connections>
+                                    <segue destination="G4V-LY-Nfo" kind="show" id="bUf-Ea-ThG"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="cardImageView" destination="RHo-zH-Jcj" id="FA9-SU-yfd"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Qnc-nD-dgY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-178" y="177"/>
         </scene>
-        <!--Achievements Navigation Controller-->
+        <!--View Controller-->
+        <scene sceneID="cG6-zF-nlr">
+            <objects>
+                <viewController storyboardIdentifier="TTARViewController" id="G4V-LY-Nfo" customClass="TTARViewController" customModule="CollectorReborn" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WfE-Y9-God">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iAI-MC-f9r">
+                                <rect key="frame" x="0.0" y="140" width="414" height="722"/>
+                                <connections>
+                                    <outlet property="delegate" destination="G4V-LY-Nfo" id="2rP-qu-aHS"/>
+                                </connections>
+                            </arscnView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="gee-8N-TCw" firstAttribute="bottom" secondItem="iAI-MC-f9r" secondAttribute="bottom" id="5Vg-gh-wIN"/>
+                            <constraint firstItem="gee-8N-TCw" firstAttribute="trailing" secondItem="iAI-MC-f9r" secondAttribute="trailing" id="Fpf-YL-Dzf"/>
+                            <constraint firstItem="iAI-MC-f9r" firstAttribute="leading" secondItem="gee-8N-TCw" secondAttribute="leading" id="grE-p8-AA6"/>
+                            <constraint firstItem="iAI-MC-f9r" firstAttribute="top" secondItem="gee-8N-TCw" secondAttribute="top" id="oL7-p2-wW8"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="gee-8N-TCw"/>
+                    </view>
+                    <connections>
+                        <outlet property="sceneView" destination="iAI-MC-f9r" id="GdI-lg-RRm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="odh-36-WP1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="642" y="177"/>
+        </scene>
+        <!--Triple Triad Navigation Controller-->
         <scene sceneID="HVn-P1-WI4">
             <objects>
-                <navigationController storyboardIdentifier="TTCardsViewController" title="Achievements Navigation Controller" automaticallyAdjustsScrollViewInsets="NO" id="bmK-qf-hIC" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="TTCardsViewController" title="Triple Triad Navigation Controller" automaticallyAdjustsScrollViewInsets="NO" id="bmK-qf-hIC" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item 1" id="wGm-kB-ONb"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="F7g-7b-dnu">

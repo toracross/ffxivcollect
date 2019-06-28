@@ -38,6 +38,7 @@ class CharacterSearchViewController: UIViewController {
         showLoading()
         FFXIVCollectService.shared.requestData(for: .characterSearch(name: name, server: server)) { [weak self] (results: CharacterSearch?) in
             guard let strongSelf = self, let characters = results?.results else {
+                Error.presentError(error: .characterSearch)
                 self?.hideLoading()
                 return
             }
@@ -113,9 +114,9 @@ extension CharacterSearchViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         showLoading()
         
-        print(characters[indexPath.row])
         FFXIVCollectService.shared.requestData(for: .character(id: characters[indexPath.row].id)) { [weak self] (results: Character?) in
             guard let strongSelf = self, let character = results else {
+                Error.presentError(error: .character)
                 self?.hideLoading()
                 return
             }

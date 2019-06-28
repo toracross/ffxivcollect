@@ -22,6 +22,11 @@ class TTCardsDetailViewController: UIViewController {
         cardImageView.setImageFromURL(string: card?.image)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let destination = segue.destination as? TTARViewController, let card = card else { return }
+        destination.card = card
+    }
+    
     // Storyboard Actions
     
     // Functions
